@@ -108,6 +108,13 @@ Signing could be done by a rdf like statement with content being another rdf, it
 
 Technically it means that the abstract id should be a hash of both the public part of the key and the signature of the content (for signing and immutability).
 
+The signing role of `for` is more important than semantics. In fact `for` and `about` are a semantically close and it is the signing nature of for that is preponderant.
+This two statement are semantically equivalent but the first one involve ownership of user1 :
+- `from` user1, `about` public like, `content` user2
+- `from` public like, `about` user1, `content` user2
+
+
+
 # FAQ
 
 - this model is not realist : every update create a new shareable distributed triple other network any relation betwenn two data the same, any trust cost the same and any info got its trust so this is very likely to explode. 
@@ -145,7 +152,7 @@ Technically it means that the abstract id should be a hash of both the public pa
 # Use cases
 
 ## Semantic
-  - RDF appropriation. Any information could be formulated as an striples to allow linking. In fact it is the same thing as RDF, but there is more potential incentive behind. So running after conceptual knowlege appropriation is nice, by linking to some knowlege and by using existing knowlege (and forking when we own or find something should be public). This required communication of striples between peers, manually doable at small scale, but it needs to be automatized to find similarity and shared knowlege in a better way. TODO transcription of a triple to striple (each of its components as self signed triple, then triple for namespace between them, then the relation between them). 
+  - RDF appropriation. Any information could be formulated as an striples to allow linking. In fact it is the same thing as RDF, but there is more potential incentive behind. So running after conceptual knowlege appropriation is nice, by linking to some knowlege and by using existing knowlege (and forking when we own or find something should be public). This required communication of striples between peers, manually doable at small scale, but it needs to be automatized to find similarity and shared knowlege in a better way. See possible [mapping for RDF][./rdfmapping.md]
   - native distributed/p2p database for this kind of informations. giving easy access to locality information, and easy inference rules (especially simplification and droping orphan and isolated content (if transient)).
     Some NoSQL databases have interesting approach, riak for instance. Yet for true peer to peer with a dynamic network of peer the place seems open for new tool. The idea is to have a support code for both networking (managing of a p2p network and Keyvalue exchange) and (kinda the idea behind a specific configuring of mydht (a leveldb backend would be suitable)). This could go further to a more generic striple database with regular query syntax (see what exist for rdf) with additional network and peer relaying/propagation considerations. 
   - specific programing language, here types are concept, and all is statically defined about the nature of the language : we say such type (rust u8) is such concept, such type over another type is another concept (struct NewConcept(u8)), but it is very static and not native. There is some room for inovation here.
@@ -164,14 +171,15 @@ Technically it means that the abstract id should be a hash of both the public pa
  
 
 ## Evolution of existing tools
-  - git plugin, see fork, versioning, revoking for similarity
-  - [linker]
-  - wikipedia vs desencyclopedia + wiki should be git + if job done badly, distrust is more public than with centralized model.
+  - [git] plugin, or any code versioning tools should be able to include striples at every commit. Even when writing this I considered : should I create a statement for this (for exemple the drafted [RDF mapping][./rdfmapping.md]) : that would be a good idea and it is true for all codes, and ressources that are created, versioned and possibly collaboratively edited. That was also the primary reason I edit it as a git project (fork , merge, ownership of code and modifications). Creating an striple over it (RDF mapping) is not to lock every thing, it is just to get priority on evolution management, keeping a central position as long as I actively participate. Yet if I did it I should also put it in a [sidechain] (actually I have enough trust in using github for not doing it), and other action that should be automatic : the easier way should be to emit striple with each commit, so have some code plugged in git. An extension should be the striples of **builds** (more CI and distribution related).
+  - In previous source contral case, code is trusted through striples over commit, it also give the idea to do striples for build (and analogy with UEFI), signed build is something, yet there is something smarter, signed library. For dynamic shared library (dll,so and such) it would be nice to have striples over the so to repercute on programs using this .so leading to chain of signed dependencies. This could go further, at a function/api level. see [linker]
+  - collaborative knowlege databases : wikipedia vs desencyclopedia + wiki should be git + if job done badly, distrust is more public than with centralized model.
   - video game monetarization : ragnarok analogy - return to official : because clean even if you need to pay -> [code] as ressource
   - information discovery - dns
   - source meta info and deriving usage of shared lib (linking with trust)
   - democracy
   - decentralized internet : ok nothing to add, a full p2p internet is nothing new, starting from freenet like some decades ago. Recent approach seems to enjoy mesh network, truly a good thing, nothing incompatible especially since mesh network generaly replace address by a public key (eg cjdns), striples could be easily define over them. TODO cjdns striple compatibility and scenari of usage of an striple p2p database component.
+  - crowdfounding + bitcoin contract : more to manage info that do promesses of donation, simply to replace quickstarter and crowd fund base upon trust and discovery over existing promises.
   - chain of information (bitcoin). [sidechain] , [sidechaintimestamp]
   - p2p for example when streaming video over bittorent protocol, this is high quality service, for video watch by thousands, quality should be as good (or better) as commercial platform. It helps hosting content (commercial video should by a small torrent server  less important contant should be seeded from home easily), it helps bandwidth, it is better for everything, except that a platform such as youtube let you earn money through advertising and viewing. The step to peer2peer web content is a rational one (platform such as youtube should think about p2p their videos, when watching a video the user also seed it (but websocket does not allow simply to exchange content between users and a browser plugin should be required, and privacy question arises but using such platform no privacy should be expected)), blizzard usage of torrent protocol is something really nice. The other step is to fully p2p the content, but how can advertising follows, we have seen some major windows torrent client going this way, but it only centralized to a company. Next generation should be company selling advertisement if the video owner link them to its video for advertisement diffusion and the company by its trust gets advertiser.
   Then follows the model of advertisement, for video it could be included in the video meaning that the resource is forked to a resource with advertisement and the incentive for getting resource with advertisement is simply that it got a massive server seeding behind it.  
@@ -188,8 +196,11 @@ selection of multiple relations to merge two concepts
 
 content is algebric (anything or id of striple), two kind of statement? (inference is different). In general any kind of content : need additional info or binary (type of binary given by `about`).
 
+algokind : use a statement id, to be able to check. Thus allowing locked proprietary checked... : let some space for this additional info which were proposed to be defined in id
 
 from : fork - public fork, about being origin and content dest
+
+multiple content : performance consideration
 
 
 * MyDHT example
@@ -217,3 +228,5 @@ In this example we see that just by signing with inclusion of `about` id in the 
 [democracy]: ./democracy.md
 [vote]: ./votealgo.md
 [linker]: ./linker.md
+[git]: ./git.md
+
