@@ -1,5 +1,7 @@
 
-Trustright, catchy word play, but the real sense would be more close to ownership right. 
+TODO fuse with ownership!! or put description from index here and link ownership -> trust right should be only point about copyright!!!
+
+Trustright, catchy play on word, but the real sense is closer to [ownership][./ownership.md] right. 
 
 An alternative to copyright where the major point is not to forbid/stop information/data exchange, but to ensure that data/information is related to its lawful owner.
 
@@ -17,4 +19,11 @@ link to rightfull owner of an information is the thing that must not be lost.
 
 
 The general idea is that you don't own info/data/concept but are trusted to be the owner.
+
+* valuation
+
+Everything that is owned has value. see [exchange markets][./exchange.md]. And the fact that a fork could be done does not diminished its value (otherwhise big social network would not be as hegemonic as they are), because the value is **a trust value** (a fork is successful only if its trust is better than the original (for example who trust oracle for opensource project : welcome libreoffice)).
+
+Trust allow to remunerate content easily : when buying a content in a store where does money go? I wanted it to go for the scenarist, the rest of the movie was utter shit.
+
 

@@ -16,4 +16,12 @@ That is the interesting point of the non determinist aspect of a p2p knowledge d
 
 Distribution and sharing strategy are a major difference with [bitcoin][./sidechain.md] : bitcoin chain propagation is simple : do not propagate invalid, here all is valid but locality rules prevails. 
 
+# Convergence of wrong info
 
+
+An interesting point is that info will converge to local topology, and depending on algo to trust locality, this means :
+
+- spam will converge to spam topology
+- bot player will likely converge to bot network
+- social network false user will converge to social network topology user of false user (more easy to invalid them if global network)
+...

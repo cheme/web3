@@ -28,7 +28,7 @@ api if striples at a function level could be partially usable : build using free
 
 TODO think about piracy for example a stream + game usecase (or opengl + game)
 
-# Operation System
+# Operating System
 
 a linux build with included signed package dependancy.
 - standard dist : archlinux

@@ -1,5 +1,7 @@
 Statements are owned in the sense that their usage as `for` in other statement require the ability to sign content with the statement key.
 
+New remuneration model of content are based upon donation (giving money after usage) and related crowd funding (giving money before creation).
+
 Their are two kind of statement
   - public striple : the signing scheme only use public info
 
@@ -19,4 +21,25 @@ Loss of private key could be solve by :
   - secondary key : after some time without usage of the concept (update of the secondary key statement), the secondary key is viewed by peer as equivalent.
   - public domain : after some time without update of the keep alive statement, the concept becomes acceptable as public
   - simply fork it and fight to be the dominant fork
+
+
+# distribution of money for ressource sharing 
+
+Use case of a movie.
+
+
+## central approach
+
+what is done today + direct donation possibility
+
+## trust approach
+
+### contracts for initialization 
+
+### exception culturelle francaise en trust
+
+### trusted result and later exploitation
+
+with crypto money, the striples themselves got value, when the movie is exchange numerous time, it lives as a dominant asset, and its component inherit from it.
++ redefinition of movie credits in terms of goodness (some will get leverage for their future)
 

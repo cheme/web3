@@ -1,5 +1,5 @@
 
-Web 2.0, or at least the semantic web is a thing. Yet interoperability through RDF is very far from easy to find, in this sense some should say something is wrong. There was a vision of openness and interoperability of information, but the effort seems to expensive for most (somehow nice to have).
+Web 2.0, or at least the [semantic web] is a thing. Yet interoperability through RDF is very far from easy to find, in this sense some should say something is wrong. There was a vision of openness and interoperability of information, but the effort seems to expensive for most (somehow nice to have).
 In this paper, I would like to express some idea, a vision of what should be information on the web. This uses two complemetary axis, access to information through peer 2 peer exchange and low level trust in the model.
 
 This concept, were thought out of boredomness the last few year. It might be interesting to relate with existing definition, concept and algorithm to reach better formalisation.
@@ -14,7 +14,7 @@ This may not be really innovative, but I really think that the net is slow to ev
 
 # Core Concept
 
-Api for concept derived from rdf : expressivity of rdf with core trust implementation.
+Api for concept derived from RDF : expressivity of RDF with core trust implementation.
 Plus striples as signed triple.
 
 ## simple triple graph like structure as universal description of information
@@ -99,7 +99,7 @@ Information close to a user is true for him or for his concepts, information is 
 
 Simple inference mechanism will most likely let user information be dominant over other info, except in case where an user trust authority is involved : simple case is a user trusting wikipedia signed info to be more relevant than its own info (see wikipedia case to see value of a dominant most trusted authority doing its job rightly). See [topology].
 
-Signing could be done by a rdf like statement with content being another rdf, its hash and sign and originator. Yet the strength of the striple is that everything is signed and it is kind of an aspect over original triple, it is more practical this way (or at least I think).
+Signing could be done by a RDF triple like statement with content being another RDF, its hash and sign and originator. Yet the strength of the striple is that everything is signed and it is kind of an aspect over original triple, it is more practical this way (or at least I think).
   - some info are owned others are shared, owned info may not be use by everyone (its private key is not publicly knowned), shared/public info let everyone use both its private and publickey (actually no private key here and signing is simply use the public key so everyone can do it). See [ownership].
   For self induced info (for exemple a master key), the triplet is define over three time the same id (or two time) and self signed its content.
   - what if I lost my private key, what if someone abuse its position of private key owner. That is not an issue, the community of user must switch to a fork of this concept (`fork` is a concept and there is always a public fork concept to run this (private fork concept may exist to redirect user to more likely better fork (close to versioning)).
@@ -118,10 +118,10 @@ This two statement are semantically equivalent but the first one involve ownersh
 # FAQ
 
 - this model is not realist : every update create a new shareable distributed triple other network any relation betwenn two data the same, any trust cost the same and any info got its trust so this is very likely to explode. 
-  Yes, that is why it is a model and it needs to be restrained by implementation depending on usecases : the model is generic, the implementations and algorithm do not need to be (that give real value to coding). So for some simple use case it is pretty realistic (see for example a user shared trust database). Yet interoperability means that it must exists : so datamining between various application is possible (even if topology of the application is different (for example I could use desencyclopedia appli and wikipedia appli and still cross reference)). 
+  Yes, that is why it is a model and it needs to be restrained by implementation depending on usecases : the model is generic, the implementations and algorithm do not need to be (that give real value to coding). So for some simple use case it is pretty realistic (for example a user shared trust database). Yet interoperability means that it must exists : so datamining between various application is possible (even if topology of the application is different (for example I could use desencyclopedia appli and wikipedia appli and still cross reference)). 
 
 - update and inference is central, whith trust (for example) it implies statements being issued everywhere, concept about concept about concept... 
-  You need to simplify the modelisation by issuing concept simplifying other concepts, for example a consolidated trust. This is true for rdf to, it is a major point, yet pretty common to data-mining. The simplification is facilitate by :
+  You need to simplify the modelisation by issuing concept simplifying other concepts, for example a consolidated trust. This is true for RDF to, it is a major point, yet pretty common to data-mining. The simplification is facilitate by :
     - the possibility to be lead by satement (for example more trusted actor which will lead it, with potential usage of [sidechain]). This is especially true for knowlege which should be globally shared.
     - p2p network locality : algorithm routing choice of p2p database to query in function of inference rules (so that all is more likely to converge to local simple coherent topologies). This is the more natural use case, yet it required some well designed routing rules and application rules.
 
@@ -136,7 +136,7 @@ This two statement are semantically equivalent but the first one involve ownersh
    - changing algo is done by creating a special kind of fork : easy
    - using the right algo is a lot more tricky. The validation algo should be include in the striple (like with bitcoin script), yet the question stay open : showing that we are able to check sign and key by applying a trustworthy method should be enough, it is then a responsability of the application to add information about such methods : an application, for exemple a user trust shared database, could statically define its validation leading to a range of striples for whom the method to use them are only known by the application. Interoperrability with other application is done by including specific info when using those statement in `about` or `from`, specific info which should be in content or non signed or even in key definition (the best solution for me). Therefore not including the validation script is bad (we should at least have a shared id of the validation process include in the id of the striple), but it should not be a limit to using the striple model (non standard striple may be forked to standard one or lost). 
 
-- This is beautifull by its simplicity, but it is just rdf like with trust, how could we expect that poeple will program it?
+- This is beautifull by its simplicity, but it is just RDF like with trust, how could we expect that poeple will program it?
   Making a programme, its [code] is value, there is true design decision to take over what should be infered, what should be striples, what cross application triples to address, what simplification to make, and this is really what will impact the [topology] of the knowledge, coding is in itself a form of ownership : 
    - so we need opensource for distributed application (otherwhise )
    - and from that version of an application is an striples leading to possible :
@@ -152,61 +152,68 @@ This two statement are semantically equivalent but the first one involve ownersh
 # Use cases
 
 ## Semantic
+
   - RDF appropriation. Any information could be formulated as an striples to allow linking. In fact it is the same thing as RDF, but there is more potential incentive behind. So running after conceptual knowlege appropriation is nice, by linking to some knowlege and by using existing knowlege (and forking when we own or find something should be public). This required communication of striples between peers, manually doable at small scale, but it needs to be automatized to find similarity and shared knowlege in a better way. See possible [mapping for RDF][./rdfmapping.md]
-  - native distributed/p2p database for this kind of informations. giving easy access to locality information, and easy inference rules (especially simplification and droping orphan and isolated content (if transient)).
-    Some NoSQL databases have interesting approach, riak for instance. Yet for true peer to peer with a dynamic network of peer the place seems open for new tool. The idea is to have a support code for both networking (managing of a p2p network and Keyvalue exchange) and (kinda the idea behind a specific configuring of mydht (a leveldb backend would be suitable)). This could go further to a more generic striple database with regular query syntax (see what exist for rdf) with additional network and peer relaying/propagation considerations. 
-  - specific programing language, here types are concept, and all is statically defined about the nature of the language : we say such type (rust u8) is such concept, such type over another type is another concept (struct NewConcept(u8)), but it is very static and not native. There is some room for inovation here.
+  - native distributed/p2p [database] for this kind of informations. giving easy access to locality information, easy inference rules (especially simplification and droping orphan and isolated content (if transient)), and multiple peers management.
+  - specific [programing language][./code.md], here types are concept, and all is statically defined about the nature of the language : we say such type (rust u8) is such concept, such type over another type is another concept (struct NewConcept(u8)), but it is very static and not native. There is some room for inovation here.
 
 ## Web of Trust, society of trust
-  - pki with user : wot 
-  - obvious social network, diaspora is good, . 'I like' something is obvious. Fbook is sometime criticize for removal of information being difficult, here it is almost more difficult but it is the nature of internet, the nature of information, when diffused it is copyable and therefore accessible. Yet with locality (especially when based on trust between user : groups), the resource could be diffused to limited trusted group of user without the risk that the central server keep long term copies or be pirated (user of the group are also vulnerable but less likely to be targetted).
 
-  Yet this striple is just a representation of what is done every day : something goes wrong with facebook, ok poeple create diaspora... It is a fork, but interroperability is hard because facebook own its info, b
-
-  - Copyright alternative, [trustright],  I draw this shit or give birth to this meme, please tip me. Problem anyone can use this concept (the draw) and say they are the owner, impersonate ownership of the ressource. This is a bad situation, locally we know the ressource is fine users having a relative level of trust that is ok, and if the ressource get known larger it should be done from the originator, ownership impersonation being relagate to garbage locality. Yet creating a resource from non active user makes it prone to impersonation by little more active users, and you need a mechanism to show that in order to locate this little more active user to garbage. Two ways to achieve that :
+  - [PKI] with user : a truly distributed Web Of Trust, with a distributed certificate authority.
+  - Copyright alternative, [trustright],  I draw this shit or give birth to this meme, please tip me. 
+    Problem anyone can use this content (the draw) and say they are the owner, impersonate ownership of the ressource. This is a bad situation, locally we know the ressource is fine users having a relative level of trust that is ok, and if the ressource get known larger it should be done from the originator, [ownership] impersonation being relagate to garbage locality. Yet creating a resource from non active user makes it prone to impersonation by little more active users, and you need a mechanism to show that in order to locate this little more active user to garbage. Two ways to achieve that :
     - have a more trusted user register your content (its hash and your id). This looks relatively safe and create business.
     - using a sidechain (bitcoin chain being higher than every thing for temporal conflict), publishing hash of resource (plus owner id obviously) in sidechain and when it is commited publishing ressource with proof that it existed before. This is 100% safe. It create business to service specialized in side chain publication (by factorizing the number of content (hash of large number of hash-user id) the cost becomes close to nothing and the service position should allow for monetization of it).
     - crowdfunding : escrow model to earn, trust to delegate, risk really taken by [company]
-  - non material assets : things that are valuable by its public/shared acceptance of value. : example of rare item
- 
+  - non material [assets][./item.md] : things that are valuable by its public/shared acceptance of value (even if copyable as a single content) : example of rare item
+  - [exchange markets][./exchange.md], trust in itself is value, striples are owned and could be therefore be bought/exchange, all that is needed to have a trust based market exchange.
+  - [democratic][./democracy.md] process and organization are based upon the principle of trust (generally through vote).
 
 ## Evolution of existing tools
-  - [git] plugin, or any code versioning tools should be able to include striples at every commit. Even when writing this I considered : should I create a statement for this (for exemple the drafted [RDF mapping][./rdfmapping.md]) : that would be a good idea and it is true for all codes, and ressources that are created, versioned and possibly collaboratively edited. That was also the primary reason I edit it as a git project (fork , merge, ownership of code and modifications). Creating an striple over it (RDF mapping) is not to lock every thing, it is just to get priority on evolution management, keeping a central position as long as I actively participate. Yet if I did it I should also put it in a [sidechain] (actually I have enough trust in using github for not doing it), and other action that should be automatic : the easier way should be to emit striple with each commit, so have some code plugged in git. An extension should be the striples of **builds** (more CI and distribution related).
-  - In previous source contral case, code is trusted through striples over commit, it also give the idea to do striples for build (and analogy with UEFI), signed build is something, yet there is something smarter, signed library. For dynamic shared library (dll,so and such) it would be nice to have striples over the so to repercute on programs using this .so leading to chain of signed dependencies. This could go further, at a function/api level. see [linker]
-  - collaborative knowlege databases : wikipedia vs desencyclopedia + wiki should be git + if job done badly, distrust is more public than with centralized model.
-  - video game monetarization : ragnarok analogy - return to official : because clean even if you need to pay -> [code] as ressource
-  - information discovery - dns
-  - source meta info and deriving usage of shared lib (linking with trust)
-  - democracy
-  - decentralized internet : ok nothing to add, a full p2p internet is nothing new, starting from freenet like some decades ago. Recent approach seems to enjoy mesh network, truly a good thing, nothing incompatible especially since mesh network generaly replace address by a public key (eg cjdns), striples could be easily define over them. TODO cjdns striple compatibility and scenari of usage of an striple p2p database component.
-  - crowdfounding + bitcoin contract : more to manage info that do promesses of donation, simply to replace quickstarter and crowd fund base upon trust and discovery over existing promises.
+
+### Technical tools
+
+Even when writing this I considered : should I create a statement for this (for exemple the drafted [RDF mapping][./rdfmapping.md]) : that would be a good idea.
+This is also true for all codes, and ressources that are created, versioned and possibly collaboratively edited. 
+That was also the primary reason I edit it as a git project (fork , merge, ownership of code and modifications). Creating an striple over it (RDF mapping) is not meant  to lock everything, it is just to own priority on evolution management, by keeping a central position as long as I actively participate. 
+Yet if I did it I should also put it in a [sidechain] (actually I have enough trust in using github for not doing it), and other action that should be automatic : the easier way should be to emit striple with each commit, so have some code plugged in git. An extension should be the striples of **builds** (more CI and distribution related).
+
+  - [git] plugin, or any code versioning tools should be able to include striples at every commit. This allows ownership of code (as a rightful author), and could be extend to error management (patch and correction), documentation and [builds][./linker.md].
+  - source meta info and deriving usage of shared lib (linking with trust) TODO remove this point (explicit in descriptions)
+  - In previous source control case, code is trusted through striples over commit, it also give the idea to do striples for build (and analogy with UEFI), signed build is something, yet there is something smarter, signed library. For dynamic shared library (dll,so and such) it would be nice to have striples over the so to repercute on programs using this .so leading to chain of signed dependencies. This could go further, at a function/api level. see [linker]
+
+### Information network
+
+  - Obviously all kind of [social] network application, web 2.0 big contenders like facebook or twitter or linking all manipulates big data easily reprensentable as RDF triple, with a central role for the users : therefore striple using `from` being the user are the basis to implement such informations. P2P in it allows a different control over the data (particularily about the [confidentiality][./socialnetwork.md]).
+  - [collaborative knowlege databases][.wiki.md] : being similar to RDF in its triple description of the world, knowledge databases should use striple, for ownership (even if they are fully Peer 2 Peer knowledge databases).
   - chain of information (bitcoin). [sidechain] , [sidechaintimestamp]
-  - p2p for example when streaming video over bittorent protocol, this is high quality service, for video watch by thousands, quality should be as good (or better) as commercial platform. It helps hosting content (commercial video should by a small torrent server  less important contant should be seeded from home easily), it helps bandwidth, it is better for everything, except that a platform such as youtube let you earn money through advertising and viewing. The step to peer2peer web content is a rational one (platform such as youtube should think about p2p their videos, when watching a video the user also seed it (but websocket does not allow simply to exchange content between users and a browser plugin should be required, and privacy question arises but using such platform no privacy should be expected)), blizzard usage of torrent protocol is something really nice. The other step is to fully p2p the content, but how can advertising follows, we have seen some major windows torrent client going this way, but it only centralized to a company. Next generation should be company selling advertisement if the video owner link them to its video for advertisement diffusion and the company by its trust gets advertiser.
-  Then follows the model of advertisement, for video it could be included in the video meaning that the resource is forked to a resource with advertisement and the incentive for getting resource with advertisement is simply that it got a massive server seeding behind it.  
-  Less intrusive model, should be to have creator friendly video readers (on aggregator website or generic player allowing streaming like vlc) : you should be impressed to see that users think it is important to support creators (and the concept model allows easy and safe tipping).
+  - decentralized internet : ok nothing to add, a full p2p internet is nothing new, starting from freenet like some decades ago. Recent approach seems to enjoy mesh network, truly a good thing, nothing incompatible especially since mesh network generaly replace address by a public key (eg [cjdns][./cjdns.md]), striples could be easily define over them. Another thing is access to striples in websites, and p2p website, this require some [browser] compatibility.
+  - information discovery (such as [DNS][./dns.md] or [web search engine][./searchengine.md])
+  - meta info about content (see [browser] plugin)
+
+### Entertainment
+  - video game monetarization, some interesting use case for online games (other games are more like any [owned content][./trustright.md]) :
+    - [multiplayer games][./multipgame.md]
+    - [Free to play games][./f2p.md]
+  
+### content creation and distribution
+ 
+  - remuneration based on trust, see [trustright] and [ownership], a basic thing is to add an striple signed `from` a content striple `about` donation with a bitcoin address as content.
+  - [crowdfounding][./crowdfunding.md]
+  - P2P for [distribution][./distribution.md]
 
 ## open algorithm/protocol
-  - [vote] machine
-  - multi user random and share value
-  - shared [ownership].
 
-selection of multiple relations to merge two concepts
+  - [vote] machine : protocol for voting
+  - [multi user random and share value][./itemattribution.md] : protocol example for creation of shared random content
+  - shared [ownership] : multiple owner
+  - [sidechaintimestamp] : usage of bitcoin chain to timestamp an striple
+  - merging two striple example
 
-# standardization proposal
-
-content is algebric (anything or id of striple), two kind of statement? (inference is different). In general any kind of content : need additional info or binary (type of binary given by `about`).
-
-algokind : use a statement id, to be able to check. Thus allowing locked proprietary checked... : let some space for this additional info which were proposed to be defined in id
-
-from : fork - public fork, about being origin and content dest
-
-multiple content : performance consideration
-
-
-* MyDHT example
+## MyDHT example
 
 Implementation consideration and performance, distributing this content is a kind of DHT (distributed hash table), with the hash being the key of the statement. Yet it may be usefull to attach more information (non striple information) or to factorize multiple striple in one object.
-A pseudo reallife example should be a rust implementation of a web of trust : the model use TODO link to mydht wot, involve three roles `truster` (the ability to trust and be use as a from), `trustedval` (the abilit y to be a signed `content`), and a kind of trust TrustRel being `about`.
+A pseudo reallife example should be a rust implementation of a [web of trust][./pki.md] : the model use TODO link to mydht wot, involve three roles `truster` (the ability to trust and be use as a from), `trustedval` (the abilit y to be a signed `content`), and a kind of trust TrustRel being `about`.
 Yet the traits used allow a sharable objet (KeyVal) to be signed by multiple TrustRel, over multiple striples (trustedval method `get_signed_content` resolve the content to sign depending on a TrustRel type) and with possibly non signed content.
 
 That way manage striples with technical object having more, indeed when a trusted val is signed the application (example of TrustedPeer) include the `from` and `about` id, and when key is calculated it is from the public key of the trustedval. Plus the key is derived from the publickey (hash), the signature is not include in key calculation but it is an error and should be implemented. The trusted peer also include transient technical information which could be check in real time but is not signed : the address of the peer (checked by ping). Conceptually it is a bit wrong, the address should be include in a statement with signature from the originator when he started its peer exchange, but the signature is checked when trying to ping the peer and other peer does not transmit non connected address, this is a tradeoff.
@@ -214,6 +221,18 @@ That way manage striples with technical object having more, indeed when a truste
 Peersign (an object with the current trust to an user (trust may change with every new trust)) object on the other hand is clearly a invalid statement as a global object : its key is the key of the TrustedUser Statement (object exchanged are typed so two identical key may be stored in different storage). The signing is done through this key. Sharing a keypair for two statement is not really an issue if the signing is include in the key. Here with peer sign we have an incomplete statement : Key pair is missing (and must be retrieve from user with same id) and statement id is missing (it could be calculated by retriving user public id and hashing with the signing), yet in the applicative context it is not an issue and in fact all is here to export this to well formed striple if needed.
 
 In this example we see that just by signing with inclusion of `about` id in the sgined content we produce something that may be exported to striple. (`from` is implicit to the signing action and content is a struct of many field, being an arbitrary content). Yet it is nice to try to be close to the model (inclusion of many striple ids in the signed content is not a good idea : just about id and an optional content id).
+
+
+# standardization proposal
+
+Content is algebric (anything or id of striple), it is in a sense two kind of content, but some extension make sense : multiple ID in content (inference is different). 
+In general any kind of content : need additional info or binary (type of binary given by `about`).
+
+The question of the kind of algo : use a statement id, to be able to check. Thus allowing locked proprietary checked (need to be forkable)... : this kind of info could be include in id of striple but it may be clearer to have metainfo.
+The problem is we may put everything in ID of striple (already hash of content (through its signing) and publickey) but we also need the ID to be easyly addressable (in this sense a hash is good, for instance for distributed hashtable).
+Finaly it seems that additional metainfo is not avoidable, but those info does not need to be hashed (the hash to create id is already define in an striple).
+
+see [frame standard proposal][standard.md].
 
 
 [sidechain]: ./sidechain.md
@@ -229,4 +248,10 @@ In this example we see that just by signing with inclusion of `about` id in the 
 [vote]: ./votealgo.md
 [linker]: ./linker.md
 [git]: ./git.md
+[item]: ./item.md
+[database]: ./database.md
+[PKI]: ./pki.md
+[social]: ./socialnetwork.md
+[semantic web]: http://www.w3.org/standards/semanticweb/
+[browser]: ./browser.md
 
