@@ -28,12 +28,15 @@ Native indexing :
   - `about` id
   - `content` id
 
+
 Advance indexing :
    - full text on content, and other search capability (metadata indexing, image analysis...)
    - simple mixed content (both a content and an ID)
    - multiple id from content
    - multiple content in content
 
+From and About interoperability :
+in rules language, query language and index definition, we need a way to manage a common use case where `from` and `about` are interoperable (semantically close : a common use case).
 
 ## Crypto
 

@@ -4,6 +4,8 @@
 
 Striple is just a representation of what is done every day : something goes wrong with facebook, ok poeple create diaspora... It is a fork, but interroperability is hard because facebook own its info.
 
+Structurally there is initiative like [activity stream][https://tools.ietf.org/html/draft-snell-activitystreams-09] that are usefull and not incompatible with striple : simply contents with possibly multi striple ID (where triple id of course).
+
 ## Facebook and twitter like
 
 Well known, well used model. Declined in every aspect of like, social professionel network (linkedin), find a wife ...
@@ -14,20 +16,37 @@ Two major issue :
 
 ## Diaspora
  
+### general approach
 
 Diaspora is good, because data could be open, because it allows decentralization and iteroperability.
 
 Yet even if you can have multiple server which synchronize (xmpp like), it is still not really a peer to peer approach as user exchange with servers not with peers and therefore do not store their data (of course they could be a server themselves yet it has cost as data is not meant to be distributed).
 
-
 For diaspora compatibility with striple should be a first step, a second step being P2P approach and a third to include trust in the P2P approach.
 
 Maybe Trust could be include before, with server storing encrypted content like described bellow.
 
-TODO is their open data format and mapping to striple
+### Data model
 
-TODO so is it only synchronizable with diaspora
+A nice set of rules to know which is interoperable what should be transmitted, a semantic for message to exchange.
 
+A mapping of diaspora federation message to striple is quite realistic, the interesting part is the signature of message between pod which involve `from` of striple being pods keys.
+
+
+Evolution of the model should involve key for every user in exchange between pod (see later remark about user signing its action instead of communication trust).
+
+XRD usage for users, like FOAF, a mapping is easily done (especially link tag where rel maps to about the parent striple being from and the rest content), but the real question is the user public key : it exists with the possibility of defining a scheme, that is fine.
+
+The fact is that diaspora identification of user is a diaspora address like : alice@alice.diaspora.example.org : for striple we need an underlying user with possible multiple diaspora address, that is a must have (it lead to inference of ownership of content through address). Therefore a diaspora address must be define by an striple `from` an abstract user.
+There is a GUID associated to user, but it cannot replace the abstract id (it could be replace by the abstract user id).
+
+Status update model is not that easy with striple, just new striple but it also means that models are quite different : status update should propagate (striple propagation rules are drastic), some info should be seen as metadata and not include in striple 
+
+Publicity of owner cannot but here the issue is the trust model where all trust is for server : so an striple signed by server when it should be all trust by user : problem of role - who should sign update : obviously it should be user but in diaspora it seems to be manage by an established trust between pod).
+It is a relative gap between user centric model or server centric model : user communication with server is trusted (oauth) so user action does not need to be signed, then server is trusted. A more striple approach is that **user actions should be signed by user and server only shared them**.
+
+To go striple, diaspora does not need to use native striple database, but export possibility should be added, and beforehand lot of user signing everywhere plus evo of datamodel to store those user signing (plus security concern due to the fact that the user sign from its browser and he need to load its private key without giving it to the servers or getting it from server : web storage or [plugin][./browser.md]).
+TODO this is fastly written from memory and rapid wiki check: ask for review to disapora
 
 
 # Prerequisite

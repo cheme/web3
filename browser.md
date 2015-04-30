@@ -13,6 +13,13 @@ button share on right click : TODO
 
 ## Chromium
 
+# Private Key storage (and striple or at least striple id)
+
+If using browser (no specific client) an issue is the storage of the private key for striple, its export and its import (plus its use through javascript), obviously webstorage should be fine.
+
+TODO study that very important may need plugin or browser specific info to access local data (chrome can have access permission to one file only (cf codinggame)).
+TODO add a passphrase !!
+
 # web3 website
 
 Not only striple but usage of striple driven website.
@@ -49,7 +56,7 @@ Some specific striples like website cache : all ressource of a website to allow 
 
 # Plugin to add information over existing content
 
-emit striple for about other accessible striple in browser :
+emit striple for about other accessible striple in browser (kindof web annotation) :
  - critics, for example rating (give birth to metacritics aggregator)
  TODO find existing
  - link discovery : add related link to help other users

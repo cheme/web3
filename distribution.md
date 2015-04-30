@@ -5,4 +5,8 @@ When streaming video over bittorent protocol, this is high quality service, for 
   Then follows the model of advertisement, for video it could be included in the video meaning that the resource is forked to a resource with advertisement and the incentive for getting resource with advertisement is simply that it got a massive server seeding behind it.  
   Less intrusive model, should be to have creator friendly video readers (on aggregator website or generic player allowing streaming like vlc) : you should be impressed to see that users think it is important to support creators (and the concept model allows easy and safe tipping).
 
+# Usage of external service
+
+Hybrid model, where some external url (plus obviously hash) equivalence should be include : for instance hosting on S3 of ressource.
+
 

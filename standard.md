@@ -24,3 +24,13 @@ This scheme does not really give good answer for advance encoding : the fact th
 
 It implies that ID max size (in byte) is 255, that is not enough may switch to 2 byte to encode size.
 It implies that ID do not have a fix size : this is questionable , an a size may be recomanded (better for dht if we do not want double hashing).
+
+
+TODO json like structure
+
+
+TODO implementation (including import and export for testing) : 
+- javascript : a must have : a small libs with encoding and some possible scheme (RSA - ECDSA - Public)
+- rust : get a lib done with c linking
+- java : standard lib to
+

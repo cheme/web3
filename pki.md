@@ -11,6 +11,7 @@ Having PGP users represented as an striple is therefore simply :
     - `from` user striple  `about` informative of a user meta signing, with `content` its metainformations.
   - one striple of id the user publickey (or derive from) : `from` this striple,  `about` informative of a signed user, with `content` its metainformations (with user public key if striple key is just derive from publickey).
 
+Plus extensible to any striple using user as `From` for example adding an hcard (hcard should be split into multiple striple in fact).
 
 # Web of trust
 
