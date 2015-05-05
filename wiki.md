@@ -3,14 +3,14 @@ Public open knowledge database are today mostly wikis. The wiki case is very int
 
 # Structuration of info
 
-Wiki editing tools should enforce semistructured description of info (not only textual), this is the case through link and page composition. Wiki should allow and enforce semantic description ([rdf][./rdfmapping.md]) and therefore striple conversion.
+Wiki editing tools should enforce semistructured description of info (not only textual), this is the case through link and page composition. Wiki should allow and enforce semantic description ([rdf](./rdfmapping.md)) and therefore striple conversion.
 
-For this see [dbpedia][http://wiki.dbpedia.org/] initiative.
+For this see [dbpedia](http://wiki.dbpedia.org/) initiative.
 
 
 # Information topology and interoperability
 
-Wiki as knowledge database can cohexist, [topology][./topology.md] ensure that. 
+Wiki as knowledge database can cohexist, [topology](./topology.md) ensure that. 
 
 wikipedia and desencyclopedia can therefore cohexist.
 

@@ -14,17 +14,17 @@ The game managor implement rules to exploit the game in a f2p model, he will do 
 
 In an open model you can have multiple game creator (plugin approach for instance) and multiple game managor (for different country or simply small server).
 
-It is similar to [multiplayer game][./multipgame.md] with lower constraints.
+It is similar to [multiplayer game](./multipgame.md) with lower constraints.
 
 # code base
 
-The game creator with signed [code][./code.md].
+The game creator with signed [code](./code.md).
 
 The game manager trust over code base, to allow best user experience.
 
 # trusted items
 
-It is shared [valualized items][./item.md], particularily the algo for [attribution of new items][./itemattribution.md].
+It is shared [valualized items](./item.md), particularily the algo for [attribution of new items](./itemattribution.md).
 
 # trusted money
 
@@ -36,7 +36,7 @@ Some equivalence could simplify/lighten the central place of the game managor, f
 
 Exchange of this for content or right to play...
 
-Trusted money could be interoperable between game/exploitant with conditions making that exploitant still benefit from change. Nothing else than an exchange place (with real time change rate based upon striple [rate][./exchange.md]).
+Trusted money could be interoperable between game/exploitant with conditions making that exploitant still benefit from change. Nothing else than an exchange place (with real time change rate based upon striple [rate](./exchange.md)).
 
 # daily login bonus
 

@@ -25,10 +25,10 @@ I am unsure about the benefit of doing this, except in some meta-language theory
 
 # compiler
 
-Additional [linking][./linker.md] info
+Additional [linking](./linker.md) info
 
 # source
 
-see [code][./code.md]
+see [code](./code.md)
 
 

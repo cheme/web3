@@ -1,4 +1,4 @@
-We have seen in [code][./code.md] that applicative as a whole have value, but pursuing this idea (and especially the fact that the application are a striple), with conjonction of source control including trust (see [git][./git.md]), we may repercut the trust up to compiled shared library interfaces (that way trusted code will be trusted up to its dependencies).
+We have seen in [code](./code.md) that applicative as a whole have value, but pursuing this idea (and especially the fact that the application are a striple), with conjonction of source control including trust (see [git](./git.md)), we may repercut the trust up to compiled shared library interfaces (that way trusted code will be trusted up to its dependencies).
 
 This lead to special compiler plugins and [linker] to sign shared library interface.
 Leading to fully signed/trusted open and participative OS/systems.

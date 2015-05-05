@@ -113,7 +113,7 @@ This two statement are semantically equivalent but the first one involve ownersh
 - `from` user1, `about` public like, `content` user2
 - `from` public like, `about` user1, `content` user2
 
-
+One important legal point is that key should only be used to sign content, a key that should be use to crypt content should be in a separate striple : the point is that some legislation or future legislation may require that private key are send to national security services, this could only be justified to decrypt content, if I use my ownership content key to crypt something I may be legally asked for it and my ownership of the resource will be compromised at the same time.
 
 # FAQ
 
@@ -153,9 +153,9 @@ This two statement are semantically equivalent but the first one involve ownersh
 
 ## Semantic
 
-  - RDF appropriation. Any information could be formulated as an striples to allow linking. In fact it is the same thing as RDF, but there is more potential incentive behind. So running after conceptual knowlege appropriation is nice, by linking to some knowlege and by using existing knowlege (and forking when we own or find something should be public). This required communication of striples between peers, manually doable at small scale, but it needs to be automatized to find similarity and shared knowlege in a better way. See possible [mapping for RDF][./rdfmapping.md]
+  - RDF appropriation. Any information could be formulated as an striples to allow linking. In fact it is the same thing as RDF, but there is more potential incentive behind. So running after conceptual knowlege appropriation is nice, by linking to some knowlege and by using existing knowlege (and forking when we own or find something should be public). This required communication of striples between peers, manually doable at small scale, but it needs to be automatized to find similarity and shared knowlege in a better way. See possible [mapping for RDF](./rdfmapping.md)
   - native distributed/p2p [database] for this kind of informations. giving easy access to locality information, easy inference rules (especially simplification and droping orphan and isolated content (if transient)), and multiple peers management.
-  - specific [programing language][./code.md], here types are concept, and all is statically defined about the nature of the language : we say such type (rust u8) is such concept, such type over another type is another concept (struct NewConcept(u8)), but it is very static and not native. There is some room for inovation here.
+  - specific [programing language](./code.md), here types are concept, and all is statically defined about the nature of the language : we say such type (rust u8) is such concept, such type over another type is another concept (struct NewConcept(u8)), but it is very static and not native. There is some room for inovation here.
 
 ## Web of Trust, society of trust
 
@@ -165,9 +165,9 @@ This two statement are semantically equivalent but the first one involve ownersh
     - have a more trusted user register your content (its hash and your id). This looks relatively safe and create business.
     - using a sidechain (bitcoin chain being higher than every thing for temporal conflict), publishing hash of resource (plus owner id obviously) in sidechain and when it is commited publishing ressource with proof that it existed before. This is 100% safe. It create business to service specialized in side chain publication (by factorizing the number of content (hash of large number of hash-user id) the cost becomes close to nothing and the service position should allow for monetization of it).
     - crowdfunding : escrow model to earn, trust to delegate, risk really taken by [company]
-  - non material [assets][./item.md] : things that are valuable by its public/shared acceptance of value (even if copyable as a single content) : example of rare item
-  - [exchange markets][./exchange.md], trust in itself is value, striples are owned and could be therefore be bought/exchange, all that is needed to have a trust based market exchange.
-  - [democratic][./democracy.md] process and organization are based upon the principle of trust (generally through vote).
+  - non material [assets](./item.md) : things that are valuable by its public/shared acceptance of value (even if copyable as a single content) : example of rare item
+  - [exchange markets](./exchange.md), trust in itself is value, striples are owned and could be therefore be bought/exchange, all that is needed to have a trust based market exchange.
+  - [democratic](./democracy.md) process and organization are based upon the principle of trust (generally through vote).
 
 ## Evolution of existing tools
 
@@ -178,34 +178,34 @@ This is also true for all codes, and ressources that are created, versioned and 
 That was also the primary reason I edit it as a git project (fork , merge, ownership of code and modifications). Creating an striple over it (RDF mapping) is not meant  to lock everything, it is just to own priority on evolution management, by keeping a central position as long as I actively participate. 
 Yet if I did it I should also put it in a [sidechain] (actually I have enough trust in using github for not doing it), and other action that should be automatic : the easier way should be to emit striple with each commit, so have some code plugged in git. An extension should be the striples of **builds** (more CI and distribution related).
 
-  - [git] plugin, or any code versioning tools should be able to include striples at every commit. This allows ownership of code (as a rightful author), and could be extend to error management (patch and correction), documentation and [builds][./linker.md].
+  - [git] plugin, or any code versioning tools should be able to include striples at every commit. This allows ownership of code (as a rightful author), and could be extend to error management (patch and correction), documentation and [builds](./linker.md).
   - source meta info and deriving usage of shared lib (linking with trust) TODO remove this point (explicit in descriptions)
   - In previous source control case, code is trusted through striples over commit, it also give the idea to do striples for build (and analogy with UEFI), signed build is something, yet there is something smarter, signed library. For dynamic shared library (dll,so and such) it would be nice to have striples over the so to repercute on programs using this .so leading to chain of signed dependencies. This could go further, at a function/api level. see [linker]
 
 ### Information network
 
-  - Obviously all kind of [social] network application, web 2.0 big contenders like facebook or twitter or linking all manipulates big data easily reprensentable as RDF triple, with a central role for the users : therefore striple using `from` being the user are the basis to implement such informations. P2P in it allows a different control over the data (particularily about the [confidentiality][./socialnetwork.md]).
-  - [collaborative knowlege databases][.wiki.md] : being similar to RDF in its triple description of the world, knowledge databases should use striple, for ownership (even if they are fully Peer 2 Peer knowledge databases).
+  - Obviously all kind of [social] network application, web 2.0 big contenders like facebook or twitter or linking all manipulates big data easily reprensentable as RDF triple, with a central role for the users : therefore striple using `from` being the user are the basis to implement such informations. P2P in it allows a different control over the data (particularily about the [confidentiality](./socialnetwork.md)).
+  - [collaborative knowlege databases](./wiki.md) : being similar to RDF in its triple description of the world, knowledge databases should use striple, for ownership (even if they are fully Peer 2 Peer knowledge databases).
   - chain of information (bitcoin). [sidechain] , [sidechaintimestamp]
-  - decentralized internet : ok nothing to add, a full p2p internet is nothing new, starting from freenet like some decades ago. Recent approach seems to enjoy mesh network, truly a good thing, nothing incompatible especially since mesh network generaly replace address by a public key (eg [cjdns][./cjdns.md]), striples could be easily define over them. Another thing is access to striples in websites, and p2p website, this require some [browser] compatibility.
-  - information discovery (such as [DNS][./dns.md] or [web search engine][./searchengine.md])
+  - decentralized internet : ok nothing to add, a full p2p internet is nothing new, starting from freenet like some decades ago. Recent approach seems to enjoy mesh network, truly a good thing, nothing incompatible especially since mesh network generaly replace address by a public key (eg [cjdns](./cjdns.md)), striples could be easily define over them. Another thing is access to striples in websites, and p2p website, this require some [browser] compatibility.
+  - information discovery (such as [DNS](./dns.md) or [web search engine](./searchengine.md))
   - meta info about content (see [browser] plugin)
 
 ### Entertainment
-  - video game monetarization, some interesting use case for online games (other games are more like any [owned content][./trustright.md]) :
-    - [multiplayer games][./multipgame.md]
-    - [Free to play games][./f2p.md]
+  - video game monetarization, some interesting use case for online games (other games are more like any [owned content](./trustright.md)) :
+    - [multiplayer games](./multipgame.md)
+    - [Free to play games](./f2p.md)
   
 ### content creation and distribution
  
   - remuneration based on trust, see [trustright] and [ownership], a basic thing is to add an striple signed `from` a content striple `about` donation with a bitcoin address as content.
-  - [crowdfounding][./crowdfunding.md]
-  - P2P for [distribution][./distribution.md]
+  - [crowdfounding](./crowdfunding.md)
+  - P2P for [distribution](./distribution.md)
 
 ## open algorithm/protocol
 
   - [vote] machine : protocol for voting
-  - [multi user random and share value][./itemattribution.md] : protocol example for creation of shared random content
+  - [multi user random and share value](./itemattribution.md) : protocol example for creation of shared random content
   - shared [ownership] : multiple owner
   - [sidechaintimestamp] : usage of bitcoin chain to timestamp an striple
   - merging two striple example
@@ -213,7 +213,7 @@ Yet if I did it I should also put it in a [sidechain] (actually I have enough tr
 ## MyDHT example
 
 Implementation consideration and performance, distributing this content is a kind of DHT (distributed hash table), with the hash being the key of the statement. Yet it may be usefull to attach more information (non striple information) or to factorize multiple striple in one object.
-A pseudo reallife example should be a rust implementation of a [web of trust][./pki.md] : the model use TODO link to mydht wot, involve three roles `truster` (the ability to trust and be use as a from), `trustedval` (the abilit y to be a signed `content`), and a kind of trust TrustRel being `about`.
+A pseudo reallife example should be a rust implementation of a [web of trust](./pki.md) : the model use TODO link to mydht wot, involve three roles `truster` (the ability to trust and be use as a from), `trustedval` (the abilit y to be a signed `content`), and a kind of trust TrustRel being `about`.
 Yet the traits used allow a sharable objet (KeyVal) to be signed by multiple TrustRel, over multiple striples (trustedval method `get_signed_content` resolve the content to sign depending on a TrustRel type) and with possibly non signed content.
 
 That way manage striples with technical object having more, indeed when a trusted val is signed the application (example of TrustedPeer) include the `from` and `about` id, and when key is calculated it is from the public key of the trustedval. Plus the key is derived from the publickey (hash), the signature is not include in key calculation but it is an error and should be implemented. The trusted peer also include transient technical information which could be check in real time but is not signed : the address of the peer (checked by ping). Conceptually it is a bit wrong, the address should be include in a statement with signature from the originator when he started its peer exchange, but the signature is checked when trying to ping the peer and other peer does not transmit non connected address, this is a tradeoff.
@@ -232,7 +232,7 @@ The question of the kind of algo : use a statement id, to be able to check. Thus
 The problem is we may put everything in ID of striple (already hash of content (through its signing) and publickey) but we also need the ID to be easyly addressable (in this sense a hash is good, for instance for distributed hashtable).
 Finaly it seems that additional metainfo is not avoidable, but those info does not need to be hashed (the hash to create id is already define in an striple).
 
-see [frame standard proposal][standard.md].
+see [frame standard proposal](./standard.md).
 
 
 [sidechain]: ./sidechain.md

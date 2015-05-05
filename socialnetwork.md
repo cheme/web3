@@ -4,7 +4,7 @@
 
 Striple is just a representation of what is done every day : something goes wrong with facebook, ok poeple create diaspora... It is a fork, but interroperability is hard because facebook own its info.
 
-Structurally there is initiative like [activity stream][https://tools.ietf.org/html/draft-snell-activitystreams-09] that are usefull and not incompatible with striple : simply contents with possibly multi striple ID (where triple id of course).
+Structurally there is initiative like [activity stream](https://tools.ietf.org/html/draft-snell-activitystreams-09) that are usefull and not incompatible with striple : simply contents with possibly multi striple ID (where triple id of course).
 
 ## Facebook and twitter like
 
@@ -45,13 +45,13 @@ Status update model is not that easy with striple, just new striple but it also 
 Publicity of owner cannot but here the issue is the trust model where all trust is for server : so an striple signed by server when it should be all trust by user : problem of role - who should sign update : obviously it should be user but in diaspora it seems to be manage by an established trust between pod).
 It is a relative gap between user centric model or server centric model : user communication with server is trusted (oauth) so user action does not need to be signed, then server is trusted. A more striple approach is that **user actions should be signed by user and server only shared them**.
 
-To go striple, diaspora does not need to use native striple database, but export possibility should be added, and beforehand lot of user signing everywhere plus evo of datamodel to store those user signing (plus security concern due to the fact that the user sign from its browser and he need to load its private key without giving it to the servers or getting it from server : web storage or [plugin][./browser.md]).
+To go striple, diaspora does not need to use native striple database, but export possibility should be added, and beforehand lot of user signing everywhere plus evo of datamodel to store those user signing (plus security concern due to the fact that the user sign from its browser and he need to load its private key without giving it to the servers or getting it from server : web storage or [plugin](./browser.md)).
 TODO this is fastly written from memory and rapid wiki check: ask for review to disapora
 
 
 # Prerequisite
 
-User with accessible key, the user definition is more related to [PKI][./pki.md] and distributed certificate authority approach : a transverse user distributed database based on trust. Yet user is striple and it does not forbid using a same striple database for user and domain specific social striples (just that it is different services).
+User with accessible key, the user definition is more related to [PKI](./pki.md) and distributed certificate authority approach : a transverse user distributed database based on trust. Yet user is striple and it does not forbid using a same striple database for user and domain specific social striples (just that it is different services).
 
 ID of user specific to the social striples is nice to have to, it allows decorellation and a form of anonymat with yet some validation (involve a service provider to keep ther link hidden (like currently)).
 

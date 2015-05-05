@@ -32,7 +32,7 @@ Those are general to striple but here in context of an existing PGP user directo
 
 ## Update of a user meta infos
 
-- if user is modeled as two striple : it is simply signing a new meta info striple then waiting for network to converge to the new one (you need at least a version or a date in the metas but inclusion in a [sidechain][./sidechain.md] is nicer (author opinion)). (basic principle of update)
+- if user is modeled as two striple : it is simply signing a new meta info striple then waiting for network to converge to the new one (you need at least a version or a date in the metas but inclusion in a [sidechain](./sidechain.md) is nicer (author opinion)). (basic principle of update)
 
 - a new user is emit with reference to the old one (at least the old public key is in its meta to allow retro compatibility). Since we now use multiple key for signing this is worst than previous approach (author opinion). This scenari is more like a revoke - new user.
 

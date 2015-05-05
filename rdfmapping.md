@@ -32,7 +32,7 @@ the point is that two striple using the same content can have a different id (th
 
 - domain specific categorization (really usefull technically for indexing and therefore efficient inference in a same namespace).
 
-striple is meant to be as generic as possible and namespace should be a special kind of striples (in [database][./database.md] it should be transversally indexed (like trust striple).
+striple is meant to be as generic as possible and namespace should be a special kind of striples (in [database](./database.md) it should be transversally indexed (like trust striple).
 
 RDF namespace representation as striple should be :
 
@@ -47,7 +47,7 @@ So we see that we got two cohexisting representation in about : the importance a
 
 # ontology
 
-For example an OWl ontology defining class should be a define as striple (with parent relation striple and property as striple). It should lead to special indexing (like trust) for [database][./database.md].
+For example an OWl ontology defining class should be a define as striple (with parent relation striple and property as striple). It should lead to special indexing (like trust) for [database](./database.md).
 
 Ontology as striple means trusted ontology (for exemple foaf), but also dynamic ontology changing depending on topology (p2p) and trust, leading to nice collaborative building.
 

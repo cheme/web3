@@ -2,7 +2,7 @@
 # motivation
 
   ragnarok analogy - return to official : because clean even if you need to pay -> [code] as ressource
-  More value for more trusted, more shared challenging approach [items][./item.md] (even for player who does not really consider social interaction), more trust on the ownership of their achievments.
+  More value for more trusted, more shared challenging approach [items](./item.md) (even for player who does not really consider social interaction), more trust on the ownership of their achievments.
 
 multiples actors :
 

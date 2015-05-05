@@ -5,9 +5,9 @@ And of course existing search engine could be normal peer (with high trust), and
 
 This could be seen as a copernic on steroids (meta search engine over multiple actors).
 
-There is many distributed search engine initiative, most of the time using a distributed hash table, here the support is more close to a trust distributed table (see [database][./database.md])
+There is many distributed search engine initiative, most of the time using a distributed hash table, here the support is more close to a trust distributed table (see [database](./database.md))
 
-We've also seen that [DNS][./dns.md] are partly search engine (with one reply).
+We've also seen that [DNS](./dns.md) are partly search engine (with one reply).
 
 An interesting approach, would also be to enrich browser with indexing capability to an striple database : that way your search engine peers is feed by other peers but also by your own browsing experience. 
 This would ensure some easy ranking of pages as the more a page is visited, the more likely it would be indexed.

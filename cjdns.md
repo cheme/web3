@@ -12,4 +12,4 @@ cjdns striple compatibility and scenarii
 TODO new thing in cjdns
 
 # striple database usage
- usage of an striple p2p [database][./database.md] component.   
+ usage of an striple p2p [database](./database.md) component.   

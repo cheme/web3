@@ -7,6 +7,9 @@ Their are two kind of statement
 
   - private or owned striple : classic KeyPair usage with private key not being communicated in the network.
 
+
+
+
 Some would say all should be public, this is the case in application allowing fork strategy. 
 But the point of this whole concept is the ownership of ressources that lead to trust over statements. It is also the main incentive for adoption, ownership of information is clearly valuable.
 
@@ -22,11 +25,15 @@ Loss of private key could be solve by :
   - public domain : after some time without update of the keep alive statement, the concept becomes acceptable as public
   - simply fork it and fight to be the dominant fork
 
+# valuation
+
+Everything that is owned has value. see [exchange markets](./exchange.md). And the fact that a fork could be done does not diminished its value (otherwhise big social network would not be as hegemonic as they are), because the value is **a trust value** (a fork is successful only if its trust is better than the original (for example who trust oracle for opensource project : welcome libreoffice)).
+
+Trust allow to remunerate content easily : when buying a content in a store where does money go? I wanted it to go for the scenarist, the rest of the movie was utter shit.
 
 # distribution of money for ressource sharing 
 
 Use case of a movie.
-
 
 ## central approach
 
