@@ -11,12 +11,15 @@ Signing key : for public striple the key length is simply 0 (plus possible info 
 xtensiblenbID : allow multiple ID or 0 ID
 xtensiblecontentsize : when null means it is a ID only triple
 
-xtensible size, means is define by fix length except if first bit is null (size superior to half maxsize), therefore it means that size overflow and a subsequent buffer of the original size must be read with a 1 byte shift (for example ~2byte, first byte is drop and 4bytes are read (~4byte with same rules for extensible size)). It is the same as saying if depending on first byte double size and drop byte but keeping 7 bit of info for case where size is ok. 
+xtensible size, means is define by fix length except if first bit is null (size superior to half maxsize), therefore it means that size overflow and a subsequent buffersize is define by this first byte minus its first bit (255/2 length).
+Then this byte is skiped and new byte size is use (with same rule on first byte for possible additional size (subsequent byte is cumulative)).
+For example ~2byte, first byte is drop and 4bytes are read because first byte value was (10000010).
+It is the same as saying if depending on first byte double size and drop byte but keeping 7 bit of info for case where size is ok.
 
 A frame should be :
 
 ```
-IDcencodingSize(1byte) | IDcencoding(optional) | IDalgoSize(1byte) | IDalgo(optional (size >0)) | stripleIdSize(1byte) | stripleID | fromIDSize(1byte) | fromID | xtensiblesigsize(~4byte) | aboutIDSize(1byte) | striplesig | aboutID | xtensiblekeysize(~2byte) | signingkey | xtensiblenbID (~1byte) |( | contentIDSize(1byte) | contentID | )\*nbID  |xtensiblecontentsize (~4byte) | content
+IDalgoSize(1byte) | IDalgo(optional (size >0)) | IDcencodingSize(1byte) | IDcencoding(optional) | stripleIdSize(1byte) | stripleID | fromIDSize(1byte) | fromID | xtensiblesigsize(~4byte) | striplesig | aboutIDSize(1byte) | aboutID | xtensiblekeysize(~2byte) | signingkey | xtensiblenbID (~1byte) |( | contentIDSize(1byte) | contentID | )\*nbID  |xtensiblecontentsize (~4byte) | content
 ```
 
 That is pretty simple and must be as simple as possible (content encoding may not be).
@@ -27,14 +30,21 @@ This scheme does not really give good answer for advance encoding : the fact th
 It implies that ID max size (in byte) is 255, that is not enough may switch to 2 byte to encode size.
 It implies that ID do not have a fix size : this is questionable , an a size may be recomanded (better for dht if we do not want double hashing).
 
+Two implicit rules : 
+  - if `striplesig` is null, consider the stripleid as `sig` : it means there was no need to reduce the signature length. (that is the case in most public scheme where the signature is a hash of the content)
+  - if `about` is null, consider `about` being the same as `from` (it allow self signing and is shorter)
+
+Note that encoding is free of signing, so free of validation, it is a metadata, it should be call `metadata` (linking to striple description possibly linking to multiple data), but at the time it is mainly use for defining encoding of content.
+
+Note that encoding of content is meta, as the actual encoding is checkable by decoding (collision possible so not that true), and we sign bytes (encoding could be in content as a header like for many files type). So encodingid is also here for metadata extensibility.
 
 Defined as protobuf it would be :
 ```
 syntax = "proto3";
 
 message STriple {
-  bytes encodingid = 1;
-  bytes algoid = 2;
+  bytes algoid = 1;
+  bytes encodingid = 2;
   bytes sid = 3;
   bytes fromid = 4;
   bytes sig = 5;
@@ -52,8 +62,8 @@ Notice that there is no enum, only reference to ids of striple. Furthermore cont
 Or a json like structure (ID bytes encoded as base64 and content bytes to (so costly : just for comprehension)) :
 ```
 {
-  "encId": "...",
   "algoId": "...",
+  "encId": "...",
   "stripleId": "...",
   "fromId": "...",
   "sig": "...",
@@ -68,7 +78,7 @@ Or a json like structure (ID bytes encoded as base64 and content bytes to (so co
 
 TODO implementation (including import and export for testing) : 
 - javascript : a must have : a small libs with encoding and some possible scheme (RSA - ECDSA - Public) . See [browser](./browser.md).
-- rust : get a lib done with c linking  : algebric type over rust struct or rust struct of reference (with lifetime for c usage). Need a storage with a simple master password scheme (symetric with salt over hash of passphrase). Only dependencies should be dsa rsa and password storage , encoding and binary manip should be as native as possible (interface over vec<u8> and &[u8] plus possibly Reader and Writer : not Decodable or Encodable).
+- [rust](https://github.com/cheme/rust-striple) : TODO init primitive for easy C linking, storage in file, basic striple use in conf
 - java : standard lib to
 + in libs serialization/loading of a map of striple
 

@@ -149,6 +149,13 @@ One important legal point is that key should only be used to sign content, a key
 - How does it relate with bitcoin, nowaday all distributed abpplication must relate with bitcoin.
   Bitcoin and its sidechains are different use case but a complementar one in some case. See [sidechain].
 
+- Signing a master key is impossible : because if its `from` and `about` are its key and its key derives from the signature we cannot sign the result of the signature!!
+  `from` is not included in the signature, it is the signing scheme that must ensure that the verification makes it impossible for him to be altered :
+    - an rsa scheme makes that the publickey of from cannot be changed, and the publickey of `from` is include in `from` signature which is origin for `from` key.
+    - a public scheme does not care about it, and in case of public hashing, the hash to calculate id must be done by including the id of `from` and the content (to avoid id collision).
+  `about` if not define and not include in signing content is implicitly infered as being the same value as `from`.
+  So for a master key, `from` is define afterward and `about` is null.
+
 # Use cases
 
 ## Semantic
