@@ -11,10 +11,13 @@ Signing key : for public striple the key length is simply 0 (plus possible info 
 xtensiblenbID : allow multiple ID or 0 ID
 xtensiblecontentsize : when null means it is a ID only triple
 
-xtensible size, means is define by fix length except if first bit is null (size superior to half maxsize), therefore it means that size overflow and a subsequent buffersize is define by this first byte minus its first bit (255/2 length).
-Then this byte is skiped and new byte size is use (with same rule on first byte for possible additional size (subsequent byte is cumulative)).
+xtensible size, means is define by fix length except if first bit is null (size superior to half maxsize), therefore it means that size overflow and a subsequent additional buffersize is define by this first byte minus its first bit (255/2 length).
+
+Then this byte is skiped and new byte size is use (with same rule on first byte for possible additional size (subsequent bytes size defs are cumulative)).
 For example ~2byte, first byte is drop and 4bytes are read because first byte value was (10000010).
 It is the same as saying if depending on first byte double size and drop byte but keeping 7 bit of info for case where size is ok.
+
+Size are defined in a **big endian** manner.
 
 A frame should be :
 
@@ -32,7 +35,7 @@ It implies that ID do not have a fix size : this is questionable , an a size may
 
 Two implicit rules : 
   - if `striplesig` is null, consider the stripleid as `sig` : it means there was no need to reduce the signature length. (that is the case in most public scheme where the signature is a hash of the content)
-  - if `about` is null, consider `about` being the same as `from` (it allow self signing and is shorter)
+  - if `about` is null, consider `about` being the same as `from` (it allow self signing and is shorter). By extension and to avoid multiple signature on same content the bytes to sign when `from` is the same as `about` must include a zero length `about` : a striple with `about` and `from` being the same must never be encoded with something else than 0 lenghth id for `about`. 
 
 Note that encoding is free of signing, so free of validation, it is a metadata, it should be call `metadata` (linking to striple description possibly linking to multiple data), but at the time it is mainly use for defining encoding of content.
 
@@ -99,4 +102,8 @@ The serialization is then :
 (separator | striple | privatekey (not mandatory) | separator) repeated n times
 
 with first and last separators not mandatory in the file.
+
+# extension
+
+A first extension could be to change xtendsize encoding to let the second byte decide if we include an internal striple frame. That way we could have a well formed tree immediatly parseable. Yet this has not that much adding value over sending multiple striples.
 
