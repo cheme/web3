@@ -1,5 +1,8 @@
 The idea is to write a hash (hash of a merkle tree of hash to allow minimal size in bitcoin chain) in a block of bitcoin chain and after n blocks published over the block containing this hash we can publish the content from which the hash has been calculated and say : I was in possession of this content when the hash of this content has been include in bitcoin chain (through inclusion in this merkle tree).
 
+After some checking and looking for tools, this example already implement this : [link](https://github.com/petertodd/python-bitcoinlib/blob/master/examples/timestamp-op-ret.py). The point of using a merkle tree was overdoing it, for a central service, a hash of the file serializing all striple to sign is ok (those striple could be public and the size is certainly not an obstacle). 
+
+
 Hash could be similar to bitoin OP_HASH160, but SHA-512 (for additional computation time) then RIPEMD160 (for low keysize).
 
 Creation of this hash to include could be :
@@ -27,12 +30,102 @@ Content may also simply include personal information.
 
 # Example of usage
 
-In relation with what has been written about [git](./git.md), the hash of this git commit "" has been included in this transaction "" of this block "" of bitcoin chain, with transaction done with 15MjGXAnJzY267B76BLKrkJ5LBKtZGxurY bitcoin address. see [blockchain.info]() and to check the hash simply python this :
+In relation with what has been written about [git](./git.md), the hash "ZbMmJ09CwRW5Hy65GZa7eSH2bL8=" of this git commit "9fce5c6ab6193f84bc6b237ef58b24087e15ca7e" has been included in this transaction "4518f25abd7c6a29ee790b16861b7875dfff13b3c7ca943a895aedf63577b03b" of this block "357153" of bitcoin chain, with transaction done with 15MjGXAnJzY267B76BLKrkJ5LBKtZGxurY bitcoin address. see [blockchain.info](https://blockchain.info/tx/4518f25abd7c6a29ee790b16861b7875dfff13b3c7ca943a895aedf63577b03b) : OP_RETURN 65b326274f42c115b91f2eb91996bb7921f66cbf appears (hexa) with :
+```
+echo -n "65b326274f42c115b91f2eb91996bb7921f66cbf"  | xxd -r -p | base64
+
+> ZbMmJ09CwRW5Hy65GZa7eSH2bL8=
+```
+
+hash calculation was done this way (we do not use sha1 hash of commit because it is unsecure, so we hash an tar archive of the commit), and should be check this way (we choose to store base64 because tools for base58 are not common on shell (ripemd160sum to so we use openssl)  : 
+
+```
+git clone ...../web3.git
+cd web3
+git archive --format tar -o test.tar 9fce5c6ab
+openssl dgst -sha512 -binary ./test.tar | openssl dgst -rmd160 -binary | base64
+rm test.tar
+
+```
+Resulting in the stored hash "ZbMmJ09CwRW5Hy65GZa7eSH2bL8=".
+
+Transaction in bitcoin was done using this python code (derived from dependance to [python bitcoinlib](https://github.com/petertodd/python-bitcoinlib) [example](https://github.com/petertodd/python-bitcoinlib/blob/master/examples/timestamp-op-ret.py)):
+
+```python
+"""Example of timestamping a file via OP_RETURN, modified to write directly a string (last command parameter)"""
+
+import sys
+if sys.version_info.major < 3:
+    sys.stderr.write('Sorry, Python 3.x required by this example.\n')
+    sys.exit(1)
+
+import hashlib
+import bitcoin.rpc
+import sys
+
+from bitcoin.core import *
+from bitcoin.core.script import *
+from base64 import *
+from bitcoin.wallet import CBitcoinAddress
+
+proxy = bitcoin.rpc.Proxy()
+
+assert len(sys.argv) > 1 
 
 
+address = CBitcoinAddress(sys.argv[1])
 
-cat "hash_value" | openssl dgst -sha512 -binary | openssl dgst -rmd160 | cut -d' ' -f2
-cat "hash_value" | openssl dgst -sha512 -binary | openssl dgst -rmd160 -binary | base64
+digest = sys.argv[2]
+
+txouts = []
+
+filtout = filter(lambda x: x['address'] == address, proxy.listunspent(0))
+unspent = sorted(filtout, key=lambda x: hash(x['amount']))
+
+txins = [CTxIn(unspent[0]['outpoint'])]
+
+print(txins)
+
+value_in = unspent[0]['amount']
+
+print(value_in)
+
+#change_addr = proxy.getnewaddress()
+change_addr = address
+change_pubkey = proxy.validateaddress(change_addr)['pubkey']
+
+#FEE_PER_BYTE = 0.00025*COIN/1000
+# use minimal fee : do not need to be fast (not should be 000001 but does not pass).
+FEE_PER_BYTE = 0.00002*COIN/1000
+
+change_out = CMutableTxOut(value_in, address.to_scriptPubKey())
+print(change_out)
+#change_out = CMutableTxOut(MAX_MONEY, CScript([change_pubkey, OP_CHECKSIG]))
+
+digest_outs = [CMutableTxOut(0, CScript([OP_RETURN, b64decode( digest )]))]
+
+txouts = digest_outs + [change_out]
+
+tx = CMutableTransaction(txins, txouts)
+
+
+tx.vout[1].nValue = int(value_in - len(tx.serialize()) * FEE_PER_BYTE)
+print(tx.vout[1].nValue)
+
+r = proxy.signrawtransaction(tx)
+assert r['complete']
+tx = r['tx']
+print("--")
+print(tx)
+print("--")
+# Display hash from transaction
+print(b64encode(tx.vout[0].scriptPubKey[2:]).decode())
+assert digest == b64encode(tx.vout[0].scriptPubKey[2:]).decode()
+print(b2x(tx.serialize()))
+print(len(tx.serialize()), 'bytes', file=sys.stderr)
+print(b2lx(proxy.sendrawtransaction(tx)))
+```
+
 
 Next more interesting use will be by using an striple ID instead of this hashing (at least there is a secret and therefore a ownership notion).
 
