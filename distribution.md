@@ -7,6 +7,6 @@ When streaming video over bittorent protocol, this is high quality service, for 
 
 # Usage of external service
 
-Hybrid model, where some external url (plus obviously hash) equivalence should be include : for instance hosting on S3 of ressource.
+Hybrid model, where some external url (plus obviously hash) equivalence should be include : for instance hosting on S3 of resource.
 
 

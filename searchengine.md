@@ -1,5 +1,5 @@
 
-Search engine are complex, with striple the model is one of a distributed search engine with trust (trust being kind of relevance).
+Search engine are complex, with Striple the model is one of a distributed search engine with trust (trust being kind of relevance).
 
 And of course existing search engine could be normal peer (with high trust), and regarding the difficulty to get relevant info they will likely keep a leading position.
 
@@ -9,7 +9,7 @@ There is many distributed search engine initiative, most of the time using a dis
 
 We've also seen that [DNS](./dns.md) are partly search engine (with one reply).
 
-An interesting approach, would also be to enrich browser with indexing capability to an striple database : that way your search engine peers is feed by other peers but also by your own browsing experience. 
+An interesting approach, would also be to enrich browser with indexing capability to an Striple database : that way your search engine peers is feed by other peers but also by your own browsing experience. 
 This would ensure some easy ranking of pages as the more a page is visited, the more likely it would be indexed.
 A major issue is that it expose in a way your browsing history, and algo must care to not show to much (a ratio between browsing indexing and peer communication indexing).
 Same thing with peer query, their should be right ratio between personal query and proxied query, furthermore rules for discovery should be aware of that (otherwhise topology will converge to clearly to your profile subject). 

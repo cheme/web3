@@ -1,24 +1,24 @@
 Help to decide or to [vote](votealgo.md).
 
-Today we should let poeple have a bigger place into decision taking process, simply because we can (politics mandate strength should be lowered and politics become closer to elected trust provider (a politic web of trust)).
+Today we should let people have a bigger place into decision taking process, simply because we can (politics mandate strength should be lowered and politics become closer to elected trust provider (a politic web of trust)).
 
 
 # local democracy
 
-idea that democracy (or multiple persons decisional process) does not work properly at large scale, because some stuff are related to local decision and some to global
-  - local stuff decide by local people
-  - global by representant of locals, or sums of locals - lack of numeric id
+Idea that democracy (or multiple persons decisional process) does not work properly at large scale, because some stuff are related to local decision and some to global
+  - local stuff decided by local people
+  - global stuff decided by representative of locals, or sums of locals - lack of numeric id
   - some stuff need to apply globally, when some stuff does not
 
 Topologically local decision is close to the idea that web of trust gives birth to electronic TAZ, .
 
-topology and local sharing of responsability (same as a state but with more **transparency**)
+Topology and local sharing of responsibility (same as a state but with more **transparency**)
 
 # global democracy
 
-local democracy should scale to global democracy, the same way we actually elect representant for poeple, hierarchical decision taking with democratic control from lower level over n+1 level is a way to scale local decision taking to a form of global democracy.
-Publicity of information, allows better control, striple are a way to emit public opinion with a signature and then give it a topologic place in a global democratic decision taking system.
-Group vote is a public information of this kind but it must be trusted from an [striple vote](./votealgo.md).
+Local democracy should scale to global democracy, the same way we actually elect representative for people, hierarchical decision taking with democratic control from lower level over n+1 level is a way to scale local decision taking to a form of global democracy.
+Publicity of information, allows better control, Striple are a way to emit public opinion with a signature and then give it a topological place in a global democratic decision taking system.
+Group vote is a public information of this kind but it must be trusted from an [Striple vote](./votealgo.md).
 
 # Vote
 

@@ -6,7 +6,7 @@ Usage of Striple over wiki information give obviously a better control over coll
 
 # Structuration of info
 
-Wiki editing tools should enforce semistructured description of info (not only textual), this is the case through link and page composition. Wiki should allow and enforce semantic description ([rdf](./rdfmapping.md)) and therefore striple conversion.
+Wiki editing tools should enforce semistructured description of info (not only textual), this is the case through link and page composition. Wiki should allow and enforce semantic description ([rdf](./rdfmapping.md)) and therefore Striple conversion.
 
 For this see [dbpedia](http://wiki.dbpedia.org/) initiative.
 
@@ -19,7 +19,7 @@ wikipedia and desencyclopedia can therefore cohexist.
 
 # Information management
 
-wiki should be like git : fork, merge, version ... And striple like that.
+wiki should be like git : fork, merge, version ... And Striple like that.
 
 # Trust
 

@@ -1,6 +1,6 @@
 The idea is to write a hash (hash of a merkle tree of hash to allow minimal size in bitcoin chain) in a block of bitcoin chain and after n blocks published over the block containing this hash we can publish the content from which the hash has been calculated and say : I was in possession of this content when the hash of this content has been include in bitcoin chain (through inclusion in this merkle tree).
 
-After some checking and looking for tools, this example already implement this : [link](https://github.com/petertodd/python-bitcoinlib/blob/master/examples/timestamp-op-ret.py). The point of using a merkle tree was overdoing it, for a central service, a hash of the file serializing all striple to sign is ok (those striple could be public and the size is certainly not an obstacle). 
+After some checking and looking for tools, this example already implement this : [link](https://github.com/petertodd/python-bitcoinlib/blob/master/examples/timestamp-op-ret.py). The point of using a merkle tree was overdoing it, for a central service, a hash of the file serializing all Striple to sign is ok (those Striple could be public and the size is certainly not an obstacle). 
 
 
 Hash could be similar to bitoin OP_HASH160, but SHA-512 (for additional computation time) then RIPEMD160 (for low keysize).
@@ -24,7 +24,7 @@ Technical points :
   WARNING about signature maleability (+ see bip62) - todo poc - seems do not care : yet need a confirmation/ checking of hash presence in chain before ok.
 
 
-Timestamp is good but hash should also include ownership of resource : a striple containing hash to check as content, from a owned pair of key, and about a generic 'bitcoin timestamp' concept.
+Timestamp is good but hash should also include ownership of resource : a Striple containing hash to check as content, from a owned pair of key, and about a generic 'bitcoin timestamp' concept.
 
 Content may also simply include personal information.
 
@@ -127,5 +127,5 @@ print(b2lx(proxy.sendrawtransaction(tx)))
 ```
 
 
-Next more interesting use will be by using an striple ID instead of this hashing (at least there is a secret and therefore a ownership notion).
+Next more interesting use will be by using an Striple ID instead of this hashing (at least there is a secret and therefore a ownership notion).
 
