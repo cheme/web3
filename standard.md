@@ -37,6 +37,9 @@ Two implicit rules : 
   - if `striplesig` is null, consider the stripleid as `sig` : it means there was no need to reduce the signature length. (that is the case in most public scheme where the signature is a hash of the content)
   - if `about` is null, consider `about` being the same as `from` (it allow self signing and is shorter). By extension and to avoid multiple signature on same content the bytes to sign when `from` is the same as `about` must include a zero length `about` : a Striple with `about` and `from` being the same must never be encoded with something else than 0 lenghth id for `about`. 
 
+TODO file xtension + recursive about = if about is missing about is us.
+
+
 Note that encoding is free of signing, so free of validation, it is a metadata, it should be call `metadata` (linking to Striple description possibly linking to multiple data), but at the time it is mainly use for defining encoding of content.
 
 Note that encoding of content is meta, as the actual encoding is checkable by decoding (collision possible so not that true), and we sign bytes (encoding could be in content as a header like for many files type). So encodingid is also here for metadata extensibility.
@@ -92,18 +95,23 @@ A file containing multiple Striple must be defined, to allow saving but also exp
 
 Here is needed the possibility of adding a private key (previous description of single Striple does not (private key should be transmit indepently)), because the means of this spec is export/import between different applications.
 
-The scheme would simply be to escape a specific four byte sequence as separator : 
-0xafaf  (choice of byte is random avoiding 0 because it is very likely to be use in content scheme as separator).
-
-Escaping the separator is done by a previous Ox00af word, and escaping an escaped separator is done by doubling previous Ox00af words (Ox00af is only seen as an escape sequence when followed by the separator sequence). 
+We simply xtendsize then private (or xtendsize 0 if not owned), then xtendsize of full striple, and concat this n time for n Striples.
 
 The serialization is then :
 
-(separator | striple | privatekey (not mandatory) | separator) repeated n times
+(1bytetag | xtensiblesize(~2byte) | privatekey (not mandatory) | xtensiblesize(~4byte) | striple ) repeated n times
 
-with first and last separators not mandatory in the file.
+with first and last separators not mandatory in the file, and a first byte of the file with value 0 for extensibility (0 as an xtendsize of 1byte).
+
+First byte is 0 for clear privatekey.
+
+First byte (xtendsize) is 1 for private key encoded in AES-256-CBC with password derived with PBKDF2-HMAC-SHA1. Fix length iv of size (see AES256) is include as first bytes of encoded private keys (one iv per striple obviously). PBKDF2 parameter following are : first byte | nbiter (2bytes xtendsize) | keylength (2bytes xtendsize) | salt (keylength bytes).
+Keylength seems useless since we use AES256, yet it may be good for future use.
 
 # extension
 
 A first extension could be to change xtendsize encoding to let the second byte decide if we include an internal Striple frame. That way we could have a well formed tree immediatly parseable. Yet this has not that much adding value over sending multiple Striples.
+
+The question of referencing a file in content is a good one : for instance a file at httP://dtumy.com/csetd.pdf , we should expect to only include the link in Striple and sign the pdf, and on checking of striple : resolving the link for checking. This seems to much high level, in fact the information here is the link and the signing, and the Striple is about content, using a link means that we need to define the resolution of this link (here http) : in a special kind of about it is fine, we need to implement the checking with download of file... In fact it is to much high level, Striple should have a special kind of content being a link plus a signature (a hash should be enough since the striple sign the hash in content), and that is the information that is signed.  
+This type of file reference is simply technical : it can be supported by implementation outside of striple definition, yet for serialization it means that we need to define it : an additional byte before each Striple for special serialize strategy (one byte before private key : with following value 0 normal, 1 linked content).  
 

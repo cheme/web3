@@ -129,3 +129,12 @@ print(b2lx(proxy.sendrawtransaction(tx)))
 
 Next more interesting use will be by using an Striple ID instead of this hashing (at least there is a secret and therefore a ownership notion).
 
+
+An other (more striple) approach to timestamp is to include the id of a striple in the bitcoin chain.
+For instance the id of this striple : TODO json output of the striple : "Git commit d56fbf24d7eb4a6b924cbde3c369193685d1eb82 sha1"
+
+is SHA512 of the RSA signing from : TODO json output of the parent "bitcoin timestamped by ECH"
+
+So if I own this last striple, it is very likely that I do have access to the other striple and the included hash (see previous example).
+Yet Sha512 is a bit long and was included in two separate transactions :
+[9b987eaa715b50f4d9181acad139d328d6e1eed1663319ea946592fc52bd9786](https://blockchain.info/tx/9b987eaa715b50f4d9181acad139d328d6e1eed1663319ea946592fc52bd9786) and [07dc81d6a7782988e35efa0bad173e45e3ebdab7636cf78b1aa78f3c7e008393](https://blockchain.info/tx/07dc81d6a7782988e35efa0bad173e45e3ebdab7636cf78b1aa78f3c7e008393)
