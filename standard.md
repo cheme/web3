@@ -22,7 +22,7 @@ Size are defined in a **big endian** manner.
 A frame should be :
 
 ```
-IDalgoSize(1byte) | IDalgo(optional (size >0)) | IDcencodingSize(1byte) | IDcencoding(optional) | stripleIdSize(1byte) | stripleID | fromIDSize(1byte) | fromID | xtensiblesigsize(~4byte) | striplesig | aboutIDSize(1byte) | aboutID | xtensiblekeysize(~2byte) | signingkey | xtensiblenbID (~1byte) |( | contentIDSize(1byte) | contentID | )\*nbID  |xtensiblecontentsize (~4byte) | content
+IDalgoSize(2byte) | IDalgo(optional (size >0)) | IDcencodingSize(2byte) | IDcencoding(optional) | stripleIdSize(2byte) | stripleID | fromIDSize(2byte) | fromID | xtensiblesigsize(~4byte) | striplesig | aboutIDSize(2byte) | aboutID | xtensiblekeysize(~2byte) | signingkey | xtensiblenbID (~1byte) |( | contentIDSize(2byte) | contentID | )\*nbID  |xtensiblecontentsize (~4byte) | content
 ```
 
 That is pretty simple and must be as simple as possible (content encoding may not be).
@@ -30,7 +30,7 @@ Signing is done over the part of the frame starting by IDaboutSize : in fact it 
 
 This scheme does not really give good answer for advance encoding : the fact that some Striple make only sense combined with others and for network efficiency should always be send with those (and possible lower number of ID by factorizing publickey and/or using public Striple).
 
-It implies that ID max size (in byte) is 255, that is not enough may switch to 2 byte to encode size.
+It implies that ID max size if one byte (in byte) is (255/2 and most derive scheme (crypto hash of longer key) are at least 160 byte)), that is not enough so ID length use two bytes (leading to 32k byte for id).
 It implies that ID do not have a fix size : this is questionable , an a size may be recomanded (better for dht if we do not want double hashing).
 
 Two implicit rules : 
