@@ -9,7 +9,9 @@ Or javascript/html5 only standard usage.
 
 The goals of webstorage of filestorage is to keep the private keys locally. 
 
-A major issue with javascript api is that as soon as your local application manipulate the private key (which is needed to sign and check info), it is difficult to ensure that your key will not be send to the distant server (if you trust javascript from it, it should send the key to himself : it is javascript).
+A major issue with javascript api is that as soon as your local application manipulate the private key (which is needed to sign and check info), it is difficult to ensure that your key will not be send to the distant server (you cannot trust external javascript for it, it can send the key to himself : it is javascript).
+
+So to manage owned striple a plugin is needed.
 
 # Plugins and browser evo for Striple in sites
 
@@ -60,7 +62,7 @@ If using browser (no specific client) an issue is the storage of the private key
 
 An idea should be to rely on webworker isolation (a web worker managing private key and possibly running signing), yet as web worker code is sent by server it is still wrong (it should be local (file access permission should be given to the worker but input usage seems not possible (need access to dom input))).
 So this is needed but should be limited to public information (no private key), at least it seems very dangerous.
-(lib should maybe offer webworker/fileapi implementation (file access to trusted domain for script of worker only (may not be possible if worker from another domain is not)), with possibility to be replace by clean plugin code management).
+lib should maybe offer webworker/fileapi implementation with file access to trusted domain for script of worker only : but that is not possible (no cross domain worker for good reason), even if the script is accessed through CORS (the worker instantiated from its blob will be seen as running from the distant site and local storage permission will need to be set for the distant site).
 
 Furtermore a passphrase should be implement over key storage (model close to firefox storage of password).
 

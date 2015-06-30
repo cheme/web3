@@ -286,5 +286,83 @@ So it was the ID of the striple timestamp before that was included in the chain 
 
 ["FV5QjmkZ6zG/LaTo3Z+TKfTXcZ8="](https://blockchain.info/tx/45b1d226c623d1c4de4c1d23871dbdd72101897a457aaafee4f5a18574d7ee2f)
 
+Creation of striple was done with those commands (using striple rust lib command example) :
+``` sh
+cp ../web3.tar .
+## Timestamp category and bitcoin kind : public sha512 (not own), from itself, about public category
+catts=$( echo "timestamp" | base64 -w 0 )
+striple create --kindfile ./base.data -x 8 --aboutfile ./base.data -x 2 --content ${catts} -o ./timestampcat.striple -c NoCipher
+striple check -i ./timestampcat.striple -x 1  --fromfile ./timestampcat.striple -x 1
+catkind=$( echo "bitcoin github timestamp of archive tar" | base64 -w 0 )
+striple create --kindfile ./base.data -x 8 --fromfile ./timestampcat.striple -x 1 --aboutfile ./base.data -x 3 --content ${catkind} -o ./timestampcat.striple -c NoCipher
+striple check -i ./timestampcat.striple -x 2  --fromfile ./timestampcat.striple -x 1
+## Timestamp category of a owner (me), kind ecdsa ed25519, from my own secret root, about previous public
+conttst=$( echo "bitcoin timestamped by ECH using ecdsa ED25519 of ripemd160" | base64 -w 0 )
+striple create --kindfile ./base.data -x 11 --fromfile ./base.data -x 1 --aboutfile ./timestampcat.striple -x 1 --content ${conttst} -o ./timestampECH.striple -c NoCipher
+striple check -i ./timestampECH.striple -x 1  --fromfile ./base.data -x 1
+## Timestamp : use an own sign (not public to keep control of info from it), using another scheme for show
+striple create --kindfile ./base.data -x 10 --fromfile ./timestampECH.striple -x 1 --aboutfile ./timestampcat.striple -x 2 --contentfile ./web3.tar -o ./timestampweb3.striple -c NoCipher --relative
+striple check -i ./timestampweb3.striple -x 1  --fromfile ./timestampECH.striple -x 1
+## Timestamp desc : additional info about the time stamp, all text here, without about, just for info, no structuration
+tsdesc=$( echo "web3 git commit 1ebbc0a59cb55a46669fa1b652aeb95445bfcb2b" | base64 -w 0 )
+striple create --kindfile ./base.data -x 11 --fromfile ./timestampweb3.striple -x 1 --content ${tsdesc} -o ./timestampweb3.striple -c NoCipher
+striple check -i ./timestampweb3.striple -x 2  --fromfile ./timestampweb3.striple -x 1
 
+```
+With base.data -x 1 being Root (owned striple)
+With base.data -x 2 being Category (public striple)
+With base.data -x 3 being Kinds (public striple)
+With base.data -x 8 being being sha512 kind (public)
+With base.data -x 11 being ecdsaripemd160 kind (owned)
+With base.data -x 10 being rsa2048_sha512 kind (owned)
+
+Visually a diagram of striple resulting (from on top, about on side and bottom for striple id usage) is like that (that is the ID of "Attached file we...." that was store in bitcoin chain) :
+
+```
+ Category(pub)  ----------      Kind(pub)    ROOT(owned)                   
+   |            v        |          |              |
+   |    +-------------+  |          |              |
+   |    |             |  |          |              |
+   ---->|  timestamp  |  |          |              |
+        |   (pub)     |  |          |              |
+        +-------------+  |          |              |
+         |        |-------          |              |              
+         |        v                 |              |
+         |  +------------------+    |              |
+         |  | bitcoingithub    |    |              |
+         |  | timestamp of tar |<----              |
+         |  |   (pub)          |                   |
+         |  +------------------+                   |
+         |    |                      ---------------
+         |    |                      |
+         |    |                      v
+         |    |      +----------------------------+
+         |    |      |                            |
+         |    |      |  Bitcoin timestamped by    |
+         -----|----->|  ECH using ecdsa ED25519   |
+              |      |  of ripemd160              |
+              |      |  (owned)                   |
+              |      +----------------------------+
+              |             |
+              |             |
+              |             |
+              |             v
+              |   +--------------------+
+              |   |  "Attached file    |
+              |   |    web3tar         |
+              --->|    striple"        |
+                  |    (owned)         |
+                  +--------------------+
+                    |
+                    |
+                    v
+    +--------------------+
+    | web3 git commit    |
+    | 1ebbc0a59cb55...   |<-
+    |  (owned)           | |
+    +--------------------+ |
+                 |         |
+                 -----------
+
+```
 
