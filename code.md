@@ -1,3 +1,11 @@
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (draft = true)
+[hm]: # (title = "striple managed source code")
+[hm]: # (+++)
+
+
+
 code as statement and trust in applicative, value + fork + opensource
 
 

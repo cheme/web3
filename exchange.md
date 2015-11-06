@@ -1,3 +1,9 @@
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (draft = true)
+[hm]: # (title = "Exchange market in a striple based web of trust")
+[hm]: # (+++)
+
 
 
   - [exchange markets](./exchange.md), trust in itself is value, how many profession are using trust daily as their "fond de commerce" : "huissier de justice", "notaire", but trust also creates value (notably in stock exchange business). Stock exchange is a good example of how value exchange regulate itself based upon offer and "demande", it is also a bad example considering some abuse of trust and subsequent possible deregulation (crash). 

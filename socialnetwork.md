@@ -1,4 +1,12 @@
- 'I like' something is obvious. Social relation are easily represented as Striple and signing role (`from`) would quite obviously be most of the time the user ID (or the user ID for this social relationship network).
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (draft = true)
+[hm]: # (title = "Social network and striple")
+[hm]: # (+++)
+
+
+
+'I like' something is obvious. Social relation are easily represented as Striple and signing role (`from`) would quite obviously be most of the time the user ID (or the user ID for this social relationship network).
 
 # Existing approach
 

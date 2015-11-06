@@ -1,3 +1,11 @@
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (draft = true)
+[hm]: # (title = "Trust from source to program linking")
+[hm]: # (+++)
+
+
+
 We have seen in [code](./code.md) that applicative as a whole have value, but pursuing this idea (and especially the fact that the application are a striple), with conjonction of source control including trust (see [git](./git.md)), we may repercut the trust up to compiled shared library interfaces (that way trusted code will be trusted up to its dependencies).
 
 This lead to special compiler plugins and [linker] to sign shared library interface.

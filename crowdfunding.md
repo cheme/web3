@@ -1,3 +1,9 @@
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (draft = true)
+[hm]: # (title = "Striple and crowdfunding")
+[hm]: # (+++)
+
 
 Here bitcoin smart property (multiple inputs requiring to reach a threshold output (threshold being a step for funding))  seems to be the more practical solution (unless you want to fund something with trust which is far to be practical, maybe in a few year who knows).
 

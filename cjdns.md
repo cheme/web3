@@ -1,3 +1,9 @@
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (draft = true)
+[hm]: # (title = "CJDNS and striple?")
+[hm]: # (+++)
+
 
 Plan to map striple model over CJDNS.
 

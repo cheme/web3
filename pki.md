@@ -1,3 +1,11 @@
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (draft = true)
+[hm]: # (title = "Web of trust and PKI")
+[hm]: # (+++)
+
+
+
 
 Using Striple to represent a web of trust is very easy.
 

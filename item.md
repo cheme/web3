@@ -1,3 +1,9 @@
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (draft = true)
+[hm]: # (title = "Item/asset and striple")
+[hm]: # (+++)
+
 
 non material assset
 

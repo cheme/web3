@@ -1,3 +1,9 @@
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (draft = true)
+[hm]: # (title = "Trustright")
+[hm]: # (+++)
+
 
 Trustright, catchy play on word, but the real sense is closer to [ownership](./ownership.md) right. 
 

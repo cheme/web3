@@ -1,3 +1,12 @@
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (draft = true)
+[hm]: # (title = "striple economic approach for businesses")
+[hm]: # (+++)
+
+
+
+
 Model of economy for company relying on info for living.
 
 - trust reliability

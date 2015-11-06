@@ -1,3 +1,11 @@
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (update = "2015-11-06T12:43:26+01:00")
+[hm]: # (updatecontent = "internal server")
+[hm]: # (draft = true)
+[hm]: # (title = "Js striple on browser")
+[hm]: # (+++)
+
 
 # native implementation
 
@@ -11,7 +19,20 @@ The goals of webstorage of filestorage is to keep the private keys locally.
 
 A major issue with javascript api is that as soon as your local application manipulate the private key (which is needed to sign and check info), it is difficult to ensure that your key will not be send to the distant server (you cannot trust external javascript for it, it can send the key to himself : it is javascript).
 
-So to manage owned striple a plugin is needed.
+So to manage owned striple an internal server or a plugin is needed.
+
+# Internal server
+
+The point is browser restriction does not allow us some action, so we can use a local webserver with a clean json rpc api to do such actions.
+
+This is the same approach as (freedom.js)[http://www.freedomjs.org/] or others DAPPs for ethereum (augur for instance).
+
+It involve CORS permission from distant site to your local server domain, it is both good and bad.
+Bad because the user need to allow it for each site using striple, with technical message and the user need to know its local webserver port (and remember it is striple related). 
+Good because the user know this is a dangerous action.
+The api with local webserver must be as restrictive as possible, multiple permission level may be an idea (through different port, or manual server filtering configuring), but still no private key must be expose by the api.
+
+Local port choice could be added, for various access permission but also for obvious config need.
 
 # Plugins and browser evo for Striple in sites
 

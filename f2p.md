@@ -1,3 +1,9 @@
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (draft = true)
+[hm]: # (title = "Free 2 play model would benefit from striple approach")
+[hm]: # (+++)
+
 
 
 Free 2 play game are particularly well suited for this model (usually less real time server need than in multiplayer games).

@@ -1,3 +1,12 @@
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (draft = true)
+[hm]: # (title = "DNS with striple case")
+[hm]: # (+++)
+
+
+
+
 DNS use case is interesting, one approach should be bitcoin like DNS, like namecoin where the value of a domain is absolute (global dns with publication cost).
 
 Using Striple in namecoin case is interesting for interoperability.

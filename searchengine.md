@@ -1,3 +1,9 @@
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (draft = true)
+[hm]: # (title = "Search engine and striple")
+[hm]: # (+++)
+
 
 Search engine are complex, with Striple the model is one of a distributed search engine with trust (trust being kind of relevance).
 

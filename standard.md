@@ -1,3 +1,9 @@
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (draft = true)
+[hm]: # (title = "Striple standard representation")
+[hm]: # (+++)
+
 
 A possible frame representation, the purpose is to allow :
   - multiple content : this is possible by adding an Striple reference to an encoding scheme, content is bytes and the encoding of content could be multiple. This is to allow flexibility.

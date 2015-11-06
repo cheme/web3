@@ -1,4 +1,12 @@
- TODO transcription of a triple to Striple (each of its components as self signed triple, then triple for namespace between them, then the relation between them).  
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (draft = true)
+[hm]: # (title = "RDF and striple, a new approach to web semantic?")
+[hm]: # (+++)
+
+
+
+TODO transcription of a triple to Striple (each of its components as self signed triple, then triple for namespace between them, then the relation between them).  
 
 When coming from RDF or trying to manipulate proper RDF statement, we need to define/automate some RDF import/export tools.
 

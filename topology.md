@@ -1,3 +1,9 @@
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (draft = true)
+[hm]: # (title = "Topology in P2P striple")
+[hm]: # (+++)
+
 
 Any information (Striple) is valid (as long as signature is valid), yet contradictory statement exists : globally some information may be incoherent but locally it is not.
 

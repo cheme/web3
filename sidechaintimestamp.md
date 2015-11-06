@@ -1,3 +1,12 @@
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (draft = true)
+[hm]: # (title = "Timestamp on bitcoin chain with striple trust")
+[hm]: # (+++)
+
+
+
+
 The idea is to write a hash (hash of a merkle tree of hash to allow minimal size in bitcoin chain) in a block of bitcoin chain and after n blocks published over the block containing this hash we can publish the content from which the hash has been calculated and say : I was in possession of this content when the hash of this content has been include in bitcoin chain (through inclusion in this merkle tree).
 
 After some checking and looking for tools, this example already implement this : [link](https://github.com/petertodd/python-bitcoinlib/blob/master/examples/timestamp-op-ret.py). The point of using a merkle tree was overdoing it, for a central service, a hash of the file serializing all Striple to sign is ok (those Striple could be public and the size is certainly not an obstacle). 

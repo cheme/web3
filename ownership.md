@@ -1,3 +1,12 @@
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (draft = true)
+[hm]: # (title = "Ownership in striple")
+[hm]: # (+++)
+
+
+
+
 Statements are owned in the sense that their usage as `for` in other statement require the ability to sign content with the statement key.
 
 New remuneration model of content are based upon donation (giving money after usage) and related crowd funding (giving money before creation).

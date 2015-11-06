@@ -1,3 +1,12 @@
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (draft = true)
+[hm]: # (title = "striple as a local to global democracy support")
+[hm]: # (+++)
+
+
+
+
 Help to decide or to [vote](votealgo.md).
 
 Today we should let people have a bigger place into decision taking process, simply because we can (politics mandate strength should be lowered and politics become closer to elected trust provider (a politic web of trust)).

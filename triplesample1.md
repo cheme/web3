@@ -1,3 +1,11 @@
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (draft = true)
+[hm]: # (title = "First sample of striple")
+[hm]: # (+++)
+
+
+
 This is sample test code from another started project which use similar concept (`entity` means `statement` and `with` means `about`) :
 
 ``` haskell

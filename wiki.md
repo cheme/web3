@@ -1,3 +1,9 @@
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (draft = true)
+[hm]: # (title = "wiki and striple")
+[hm]: # (+++)
+
 
 Public open knowledge database are today mostly wikis. The wiki case is very interesting by its diversity and the fact that successful wiki are sometime non profit wiki.
 

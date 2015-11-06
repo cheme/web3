@@ -1,3 +1,11 @@
+[hm]: # (+++)
+[hm]: # (date = "2015-05-30T12:43:26+01:00")
+[hm]: # (draft = true)
+[hm]: # (title = "An ok electronic vote protocol")
+[hm]: # (+++)
+
+
+
 Doing a vote in a group of known person involve some needed control.
 
 Today vote is checked locally when the ballot is open by any citizen who want to check the counting process. That is a well accepted democratic control.
