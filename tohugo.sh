@@ -8,3 +8,4 @@ for f in ./*.md
 do
   sed -i 's/\.\/\([^\.]*\)\.md/\/post\/\1/g' ./hugo/content/post/$f
 done
+./othtohugo.sh

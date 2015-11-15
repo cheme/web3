@@ -1,9 +1,13 @@
 [hm]: # (+++)
 [hm]: # (date = "2015-05-30T12:43:26+01:00")
 [hm]: # (draft = true)
-[hm]: # (title = "YAnother Web3 formultation")
+[hm]: # (title = "Striple")
+[hm]: # (categories = ["Striple","Concept"])
+[hm]: # (tags = ["introduction","index"])
+[hm]: # (menu = "main")
 [hm]: # (+++)
 
+# YAnother Web3 formultation
 
 Web 2.0, or at least the [semantic web] is a thing. Yet RDF interoperability of any information on the web is very far from being the actual situation.  
 Some should say something is wrong, or something is too slow.  

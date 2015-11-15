@@ -2,6 +2,8 @@
 [hm]: # (date = "2015-05-30T12:43:26+01:00")
 [hm]: # (draft = true)
 [hm]: # (title = "Motivation behind striple formalism")
+[hm]: # (categories = ["Striple","Personal"])
+[hm]: # (tags = ["personal"])
 [hm]: # (+++)
 
 

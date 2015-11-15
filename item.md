@@ -2,10 +2,12 @@
 [hm]: # (date = "2015-05-30T12:43:26+01:00")
 [hm]: # (draft = true)
 [hm]: # (title = "Item/asset and striple")
+[hm]: # (categories = ["Striple","Concept","Society"])
+[hm]: # (tags = ["item","value","random","ownership"])
 [hm]: # (+++)
 
 
-non material assset
+non material asset
 
 - items
   - authored (picture, 3D model...), export to multiple game assets...  Payment on usage 
@@ -35,6 +37,7 @@ Other game server may trust those or forbid those, you could also imagine using 
 # monetarization
 
 Real world value, notably for creator : 
+
 - striple [ownership](./ownership.md)
 - game being program (code and authored asset), compilation of build or server should keep striples dependency to have a view over striples (assets) usage (plus their ownership striples rules defining remuneration condition) and being able to distribute money fairly (either through a central collecting and redistribution or a more p2p approach). It is similar to [code](./code.md) and [linker](./linker.md) approach.
 - value of a random defined item is given by the trust of others in the actual random generation of the item (and trust in ownership too).

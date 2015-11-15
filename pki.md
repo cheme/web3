@@ -2,6 +2,8 @@
 [hm]: # (date = "2015-05-30T12:43:26+01:00")
 [hm]: # (draft = true)
 [hm]: # (title = "Web of trust and PKI")
+[hm]: # (categories = ["Striple","Design"])
+[hm]: # (tags = ["pki","wot","pgp","trust"])
 [hm]: # (+++)
 
 

@@ -2,6 +2,8 @@
 [hm]: # (date = "2015-05-30T12:43:26+01:00")
 [hm]: # (draft = true)
 [hm]: # (title = "Striple and crowdfunding")
+[hm]: # (categories = ["Striple","Society"])
+[hm]: # (tags = ["company","value","business"])
 [hm]: # (+++)
 
 

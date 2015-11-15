@@ -2,6 +2,8 @@
 [hm]: # (date = "2015-05-30T12:43:26+01:00")
 [hm]: # (draft = true)
 [hm]: # (title = "Trust from source to program linking")
+[hm]: # (categories = ["Striple","Design"])
+[hm]: # (tags = ["code","linker","api","os"])
 [hm]: # (+++)
 
 
@@ -16,7 +18,7 @@ C linux use case : TODO
 LLVM/rust use case : TODO
 
 
-  - abusing a dominant position : some [company] should take possession of the most basics concepts through their dominant market position. This is especially true for closed source software like operating system : obviously forking concepts enclosed in a close os is not realistic. So applicative should no be able to use os primitive with linking concept, that means that a linker should never be allowed to enforce concept linkage (and like for any ffi implementation it should be possible to write an interface between concept) : in fact it is simply include some concept fork in interface with primitive and having algorithm that underrate such forced concepts (even if they are shared by millions).
+  - abusing a dominant position : some [company](./company.md) should take possession of the most basics concepts through their dominant market position. This is especially true for closed source software like operating system : obviously forking concepts enclosed in a close os is not realistic. So applicative should no be able to use os primitive with linking concept, that means that a linker should never be allowed to enforce concept linkage (and like for any ffi implementation it should be possible to write an interface between concept) : in fact it is simply include some concept fork in interface with primitive and having algorithm that underrate such forced concepts (even if they are shared by millions).
 
 # Api level
 

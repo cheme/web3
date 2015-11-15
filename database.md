@@ -2,6 +2,8 @@
 [hm]: # (date = "2015-05-30T12:43:26+01:00")
 [hm]: # (draft = true)
 [hm]: # (title = "Concept for a striple database")
+[hm]: # (categories = ["Striple","Design","Concept"])
+[hm]: # (tags = ["nosql","db","database","rdf","p2p"])
 [hm]: # (+++)
 
 

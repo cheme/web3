@@ -4,6 +4,8 @@
 [hm]: # (updatecontent = "internal server")
 [hm]: # (draft = true)
 [hm]: # (title = "Js striple on browser")
+[hm]: # (categories = ["Striple","Design"])
+[hm]: # (tags = ["browser","js","client","web"])
 [hm]: # (+++)
 
 

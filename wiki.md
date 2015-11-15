@@ -2,6 +2,8 @@
 [hm]: # (date = "2015-05-30T12:43:26+01:00")
 [hm]: # (draft = true)
 [hm]: # (title = "wiki and striple")
+[hm]: # (categories = ["Striple","Concept"])
+[hm]: # (tags = ["wiki","knowledge","semantic","tools","value"])
 [hm]: # (+++)
 
 

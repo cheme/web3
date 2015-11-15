@@ -2,6 +2,8 @@
 [hm]: # (date = "2015-05-30T12:43:26+01:00")
 [hm]: # (draft = true)
 [hm]: # (title = "Free 2 play model would benefit from striple approach")
+[hm]: # (categories = ["Striple","Society","Concept"])
+[hm]: # (tags = ["f2p","gaming","business","items","value","trust"])
 [hm]: # (+++)
 
 

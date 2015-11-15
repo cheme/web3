@@ -1,3 +1,45 @@
-baseurl = "http://replace-this-with-your-hugo-site.com/"
+baseurl = "http://TODO-reactivate-mydomain/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Émeric's ranting/rumbling & striple"
+disqusShortname = "TODO_cheme" # TODO, enable Disqus integration
+MetaDataFormat = "toml"
+theme = "hyde-x"
+paginate = 10
+
+[author]
+    name = "Émeric Chevalier"
+
+[taxonomies]
+    category = "categories"
+    tag = "tags"
+
+[params]
+    truncate = true # default value
+    
+    defaultDescription = "My blog about computer science related day dreaming"
+
+    defaultKeywords = "striple,cheme,blog,trust,wot" # TODO add all tags
+
+    # This also works: "theme-base-08 layout-reverse", or just "layout-reverse".
+    theme = "theme-base-09 layout-reverse"
+
+    highlight = "monokai_sublime"
+
+    tagline = "Dev,Design,Archi"
+
+    home = "Posts"
+
+    #gravatarHash = "MD5 hash of your Gravatar email address" TODO get a gravatar
+
+    github = "http://github.com/cheme"
+#    bitbucket = ""
+    stackOverflow = "http://github.com/cheme" # TODO find it
+    linkedin = "http://github.com/cheme" # TODO find it
+#    googleplus = ""
+#    facebook = ""
+#    twitter = ""
+#    youtube = ""
+
+    # Other social-like sidebar links
+    rss = true  # switch to true to enable RSS icon link TODO try it latter
+#    flattr = ""  # populate with your flattr uid

@@ -2,6 +2,8 @@
 [hm]: # (date = "2015-05-30T12:43:26+01:00")
 [hm]: # (draft = true)
 [hm]: # (title = "striple as a local to global democracy support")
+[hm]: # (categories = ["Striple","Society"])
+[hm]: # (tags = ["democracy","vote","taz","local","global"])
 [hm]: # (+++)
 
 
