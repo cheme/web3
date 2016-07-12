@@ -11,7 +11,7 @@
 
 
 
-Having not much free time currently, it has been some time since I update my [striple](./web3.md) project, yet recently the DAO unexpected behaviour (I do not like the 'hack' name has nothing seems to really misfunction), is such an interesting case (especially the fork controversy) that I need to update this site to add a few word about the usefullness of a WebOfTrust striple meta information description of blockchain and their fork
+Having not much free time currently, it has been some time since I update my [striple](../web3.md) project, yet recently the DAO unexpected behaviour (I do not like the 'hack' name has nothing seems to really misfunction), is such an interesting case (especially the fork controversy) that I need to update this site to add a few word about the usefullness of a WebOfTrust striple meta information description of blockchain and their fork
 
 
 **Warning, this post is based upon which might be a misconception that the Hard Fork requires intervention on the ethereum chain and client.**
@@ -88,14 +88,14 @@ So there is the good idea to vote on the fork, yet it is only a short term decis
 
 ### Description in its chain
 
-That is the most natural idea, and indeed it should be. As seen [before](./sidechain.md), a striple state should be [included](./sidechaintimestamp.md) in blockchains for the inherently different property of those blockchains. 
+That is the most natural idea, and indeed it should be. As seen [before](../sidechain.md), a striple state should be [included](../sidechaintimestamp.md) in blockchains for the inherently different property of those blockchains. 
 So why using striple : 
 - as a natural description language, with its own fork decision strategy tooling (the later should be defined as contracts).
 - for a DHT efficient management of information, to much information in a Proof Of Work blockchain (at this time I do not really believe in Proof Of Stake (the one in maidsafe for instance in my opinion require local wot), thus my favored WOT design), and the need for a user controlled information storage.
 
 ### Description in a WOT DHT
 
-Getting [trust based universal info](topology.md) is good for fork management, all was said before.
+Getting [trust based universal info](../topology.md) is good for fork management, all was said before.
 
 
 # Fork mining
