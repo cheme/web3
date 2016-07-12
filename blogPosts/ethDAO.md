@@ -16,6 +16,7 @@ Having not much free time currently, it has been some time since I update my [st
 
 **Warning, this post is based upon which might be a misconception that the Hard Fork requires intervention on the ethereum chain and client.**
 
+**It was as I did not consider a mechanism to get eth from dao, probably the culprit for all this mess...**
 
 # DAO fork opinion
 
