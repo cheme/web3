@@ -4,6 +4,7 @@
 [hm]: # (title = "First sample of striple")
 [hm]: # (categories = ["Striple","Design"])
 [hm]: # (tags = ["example","technical"])
+[hm]: # (weight = 6)
 [hm]: # (+++)
 
 

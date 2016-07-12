@@ -4,6 +4,7 @@
 [hm]: # (title = "Timestamp on bitcoin chain with striple trust")
 [hm]: # (categories = ["Striple","Design"])
 [hm]: # (tags = ["sidechain","value","bitcoin","technical"])
+[hm]: # (weight = 5)
 [hm]: # (+++)
 
 

@@ -4,6 +4,7 @@
 [hm]: # (title = "DNS with striple case")
 [hm]: # (categories = ["Striple","Design"])
 [hm]: # (tags = ["dns","p2p","wot"])
+[hm]: # (weight = 6)
 [hm]: # (+++)
 
 

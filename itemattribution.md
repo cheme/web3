@@ -4,6 +4,7 @@
 [hm]: # (title = "Protocol for random trusted items/assets")
 [hm]: # (categories = ["Striple","Design"])
 [hm]: # (tags = ["item","value","random","algo"])
+[hm]: # (weight = 50)
 [hm]: # (+++)
 
 

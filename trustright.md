@@ -2,6 +2,7 @@
 [hm]: # (date = "2015-05-30T12:43:26+01:00")
 [hm]: # (draft = true)
 [hm]: # (title = "Trustright")
+[hm]: # (weight = 3)
 [hm]: # (categories = ["Striple","Concept","Society"])
 [hm]: # (tags = ["trust","business","value","ownership"])
 [hm]: # (+++)

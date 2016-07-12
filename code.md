@@ -4,6 +4,7 @@
 [hm]: # (title = "striple managed source code")
 [hm]: # (categories = ["Striple","Concept"])
 [hm]: # (tags = ["code","source","value"])
+[hm]: # (weight = 50)
 [hm]: # (+++)
 
 

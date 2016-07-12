@@ -6,6 +6,7 @@
 [hm]: # (title = "Js striple on browser")
 [hm]: # (categories = ["Striple","Design"])
 [hm]: # (tags = ["browser","js","client","web"])
+[hm]: # (weight = 50)
 [hm]: # (+++)
 
 

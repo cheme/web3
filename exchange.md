@@ -4,6 +4,7 @@
 [hm]: # (title = "Exchange market in a striple based web of trust")
 [hm]: # (categories = ["Striple","Society"])
 [hm]: # (tags = ["business","value","exchange","stock","market"])
+[hm]: # (weight = 50)
 [hm]: # (+++)
 
 

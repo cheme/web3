@@ -4,6 +4,7 @@
 [hm]: # (title = "Social network and striple")
 [hm]: # (categories = ["Striple","Concept","Society"])
 [hm]: # (tags = ["social","business"])
+[hm]: # (weight = 99)
 [hm]: # (+++)
 
 

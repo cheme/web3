@@ -1,9 +1,9 @@
-baseurl = "http://TODO-reactivate-mydomain/"
+baseurl = "http://striple.mooo.com/"
 languageCode = "en-us"
 title = "Émeric's ranting/rumbling & striple"
-disqusShortname = "TODO_cheme" # TODO, enable Disqus integration
+disqusShortname = "striple"
 MetaDataFormat = "toml"
-theme = "hyde-x"
+theme = "hydex"
 paginate = 10
 
 [author]
@@ -12,6 +12,20 @@ paginate = 10
 [taxonomies]
     category = "categories"
     tag = "tags"
+
+[[menu.main]]
+    name = "Categories"
+    weight = -110
+    identifier = "categories"
+    url = "/categories/"
+
+
+[[menu.main]]
+    name = "Tags"
+    pre = ""
+    weight = -100
+    identifier = "tags"
+    url = "/tags/"
 
 [params]
     truncate = true # default value
@@ -29,12 +43,12 @@ paginate = 10
 
     home = "Posts"
 
-    #gravatarHash = "MD5 hash of your Gravatar email address" TODO get a gravatar
+    gravatarHash = "6db2711293800830a1bf2d918cebfe61"
 
     github = "http://github.com/cheme"
 #    bitbucket = ""
     stackOverflow = "http://github.com/cheme" # TODO find it
-    linkedin = "http://github.com/cheme" # TODO find it
+    linkedin = "http://fr.linkedin.com/in/emericchevalier"
 #    googleplus = ""
 #    facebook = ""
 #    twitter = ""

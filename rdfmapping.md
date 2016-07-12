@@ -1,6 +1,7 @@
 [hm]: # (+++)
 [hm]: # (date = "2015-05-30T12:43:26+01:00")
 [hm]: # (draft = true)
+[hm]: # (weight = 4)
 [hm]: # (title = "RDF and striple, a new approach to web semantic?")
 [hm]: # (categories = ["Striple","Concept","Design"])
 [hm]: # (tags = ["rdf","example"])

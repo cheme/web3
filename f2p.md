@@ -4,6 +4,7 @@
 [hm]: # (title = "Free 2 play model would benefit from striple approach")
 [hm]: # (categories = ["Striple","Society","Concept"])
 [hm]: # (tags = ["f2p","gaming","business","items","value","trust"])
+[hm]: # (weight = 50)
 [hm]: # (+++)
 
 

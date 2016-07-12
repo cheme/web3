@@ -1,6 +1,7 @@
 [hm]: # (+++)
 [hm]: # (date = "2015-05-30T12:43:26+01:00")
 [hm]: # (draft = true)
+[hm]: # (weight = 4)
 [hm]: # (title = "striple economic approach for businesses")
 [hm]: # (categories = ["Striple","Society"])
 [hm]: # (tags = ["company","profit","value","business"])

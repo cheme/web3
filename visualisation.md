@@ -4,6 +4,7 @@
 [hm]: # (title = "visualisation for striple")
 [hm]: # (categories = ["Striple","Design"])
 [hm]: # (tags = ["visualization","rendering"])
+[hm]: # (weight = 99)
 [hm]: # (+++)
 
 

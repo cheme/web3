@@ -5,6 +5,7 @@
 [hm]: # (categories = ["Striple","Concept"])
 [hm]: # (tags = ["introduction","index"])
 [hm]: # (menu = "main")
+[hm]: # (weight = 10)
 [hm]: # (+++)
 
 # YAnother Web3 formultation

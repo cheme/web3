@@ -1,6 +1,7 @@
 [hm]: # (+++)
 [hm]: # (date = "2015-05-30T12:43:26+01:00")
 [hm]: # (draft = true)
+[hm]: # (weight = 1)
 [hm]: # (title = "An ok electronic vote protocol")
 [hm]: # (categories = ["Striple","Design","Society"])
 [hm]: # (tags = ["vote","democracy","technical"])

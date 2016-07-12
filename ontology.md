@@ -4,6 +4,7 @@
 [hm]: # (title = "Ontology and striple")
 [hm]: # (categories = ["Striple","Concept"])
 [hm]: # (tags = ["ontology"])
+[hm]: # (weight = 99)
 [hm]: # (+++)
 
 

@@ -4,6 +4,7 @@
 [hm]: # (title = "CJDNS and striple?")
 [hm]: # (categories = ["Striple","Design"])
 [hm]: # (tags = ["cjdns","p2p","network"])
+[hm]: # (weight = 99)
 [hm]: # (+++)
 
 

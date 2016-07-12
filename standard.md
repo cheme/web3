@@ -4,6 +4,7 @@
 [hm]: # (title = "Striple standard representation")
 [hm]: # (categories = ["Striple","Design"])
 [hm]: # (tags = ["frame","technical"])
+[hm]: # (weight = 4)
 [hm]: # (+++)
 
 

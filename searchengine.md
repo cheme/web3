@@ -4,6 +4,7 @@
 [hm]: # (title = "Search engine and striple")
 [hm]: # (categories = ["Striple","Concept"])
 [hm]: # (tags = ["search"])
+[hm]: # (weight = 99)
 [hm]: # (+++)
 
 

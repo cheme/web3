@@ -4,6 +4,7 @@
 [hm]: # (title = "Concept for a striple database")
 [hm]: # (categories = ["Striple","Design","Concept"])
 [hm]: # (tags = ["nosql","db","database","rdf","p2p"])
+[hm]: # (weight = 50)
 [hm]: # (+++)
 
 

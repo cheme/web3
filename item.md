@@ -4,6 +4,7 @@
 [hm]: # (title = "Item/asset and striple")
 [hm]: # (categories = ["Striple","Concept","Society"])
 [hm]: # (tags = ["item","value","random","ownership"])
+[hm]: # (weight = 3)
 [hm]: # (+++)
 
 

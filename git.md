@@ -4,6 +4,7 @@
 [hm]: # (title = "Git extension with striple?")
 [hm]: # (categories = ["Striple","Design"])
 [hm]: # (tags = ["code","source","git"])
+[hm]: # (weight = 50)
 [hm]: # (+++)
 
 

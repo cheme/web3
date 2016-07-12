@@ -4,6 +4,8 @@
 [hm]: # (title = "Multiplayer game and striple")
 [hm]: # (categories = ["Striple","Concept","Society"])
 [hm]: # (tags = ["gaming","multiplayer","organization","value"])
+[hm]: # (keywords = ["gaming","multiplayer","organization","value"])
+[hm]: # (weight = 99)
 [hm]: # (+++)
 
 

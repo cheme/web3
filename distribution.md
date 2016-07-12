@@ -4,6 +4,7 @@
 [hm]: # (title = "P2P and distribution")
 [hm]: # (categories = ["Striple","Concept"])
 [hm]: # (tags = ["business","p2p","distribution","service"])
+[hm]: # (weight = 6)
 [hm]: # (+++)
 
 

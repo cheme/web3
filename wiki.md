@@ -4,6 +4,7 @@
 [hm]: # (title = "wiki and striple")
 [hm]: # (categories = ["Striple","Concept"])
 [hm]: # (tags = ["wiki","knowledge","semantic","tools","value"])
+[hm]: # (weight = 20)
 [hm]: # (+++)
 
 

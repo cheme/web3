@@ -1,4 +1,4 @@
-It is like the glorious vision of interoperabillity and ownership of information through asymetric signing.
+A glorious vision of interoperabillity and ownership of information through asymetric signing.
 
 In short words : everything could be define as semantic relation, everything could be signed, everything should be signed, everything can be exported/stored as Striples.
 

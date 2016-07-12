@@ -4,6 +4,7 @@
 [hm]: # (title = "Web of trust and PKI")
 [hm]: # (categories = ["Striple","Design"])
 [hm]: # (tags = ["pki","wot","pgp","trust"])
+[hm]: # (weight = 5)
 [hm]: # (+++)
 
 

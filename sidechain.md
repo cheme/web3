@@ -1,9 +1,12 @@
 [hm]: # (+++)
 [hm]: # (date = "2015-05-30T12:43:26+01:00")
 [hm]: # (draft = true)
+[hm]: # (update = "2016-07-19T09:48:44+01:00")
+[hm]: # (updatecontent = "Words about ethereum")
+[hm]: # (weight = 3)
 [hm]: # (title = "Sidechain and striple")
 [hm]: # (categories = ["Striple","Society","Concept"])
-[hm]: # (tags = ["sidechain","value","bitcoin"])
+[hm]: # (tags = ["sidechain","value","bitcoin","ethereum"])
 [hm]: # (+++)
 
 
@@ -52,4 +55,11 @@ Being able to parse a merkletree hash inclusion in a sidechain for all Striples 
 The user and is local database will have access to more accurate information by having peers with such `bigdata` capabilities, like todays search engine.
 
 But inclusion in the chain is still very important, to allow the user to fact-check what the company will say to him : parsing a block-chain and all side-chain trees of hash to lookup for info is quite impossible for a basic single user. On the other way checking that value used are indeed included is easy if enough info has been given to the user (see example of service describe in [timestamp](./sidechaintimestamp.md) example.
+
+
+# Ethereum
+
+ethereum is post-bitcoin chain, nothing to fancy (at the time of writing Proof Of Work is still use (Proof Of Stake to come later is a real change and should really change thing but everything is still unclear to me) but a really from design computation platform with a cost model to include computation (contracts) in the chain. This consensus/shared computation design lead to a ease of definition for chain application with their own rules. 
+
+Still we keep similar principle : immutable data (in this case immutable computation), pow... Similarily, and in relation with DAO contract bad design and subsequent controversy on forking (june-jully 2016), their appear to be a real need for a web of trust forking information description (which would be somehow fine as ethereum contracts but is the kind of info that is somewhat universal and could benefit from a striple description). So having striple description of sidechain is especially relevant for chain forking too : the next question being the mining strategy on multiple chain with wot adjustment (more technical for efficiency).
 

@@ -4,6 +4,8 @@
 [hm]: # (title = "Motivation behind striple formalism")
 [hm]: # (categories = ["Striple","Personal"])
 [hm]: # (tags = ["personal"])
+[hm]: # (keywords = ["personal"])
+[hm]: # (weight = 99)
 [hm]: # (+++)
 
 
@@ -24,5 +26,5 @@ I think the best way to communicate motivations would be to describe what seems 
   - even personal information
   - information interoperrability is a nice to have
   - information reusability is by linking (nothing wrong)
-  - the general consensus is that you must protect information (private info obviously and also copyright). see [trustright]
+  - the general consensus is that you must protect information (private info obviously and also copyright). see [trustright](./trustright.md)
 

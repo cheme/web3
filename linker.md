@@ -4,6 +4,7 @@
 [hm]: # (title = "Trust from source to program linking")
 [hm]: # (categories = ["Striple","Design"])
 [hm]: # (tags = ["code","linker","api","os"])
+[hm]: # (weight = 99)
 [hm]: # (+++)
 
 

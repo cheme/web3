@@ -4,6 +4,7 @@
 [hm]: # (title = "striple as a local to global democracy support")
 [hm]: # (categories = ["Striple","Society"])
 [hm]: # (tags = ["democracy","vote","taz","local","global"])
+[hm]: # (weight = 5)
 [hm]: # (+++)
 
 

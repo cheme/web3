@@ -4,6 +4,7 @@
 [hm]: # (title = "Striple and crowdfunding")
 [hm]: # (categories = ["Striple","Society"])
 [hm]: # (tags = ["company","value","business"])
+[hm]: # (weight = 50)
 [hm]: # (+++)
 
 
