@@ -124,3 +124,36 @@ A first extension could be to change xtendsize encoding to let the second byte d
 The question of referencing a file in content is a good one : for instance a file at httP://dtumy.com/csetd.pdf , we should expect to only include the link in Striple and sign the pdf, and on checking of striple : resolving the link for checking. This seems to much high level, in fact the information here is the link and the signing, and the Striple is about content, using a link means that we need to define the resolution of this link (here http) : in a special kind of about it is fine, we need to implement the checking with download of file... In fact it is to much high level, Striple should have a special kind of content being a link plus a signature (a hash should be enough since the striple sign the hash in content), and that is the information that is signed.  
 This type of file reference is simply technical : it can be supported by implementation outside of striple definition, yet for serialization it means that we need to define it : an additional byte before each Striple for special serialize strategy (one byte before private key : with following value 0 normal, 1 linked content).  
 
+# Striple refacto
+
+As striples are not really use at this point (31/07/2017), the following refacto is going to replace last standard :
+        - size of content shouldn't be signed 
+        - striple standard should only constrained signed content (a serialize striple variant could check full frame), this follow the philosophy to not include versionning on striple signing scheme definition in the frame
+        - furthermore xtendsize allowed to sign same content multiple time (this now require usage of other aboutid).
+        - asn1 signing could be envisionned (removing technical info and just having an ordering of signing content let us serialize content in multiple way easily (it is only about signing (or hashing for public))
+        - no multiple about id (combining two striple should be another one)
+        - no namespace (on theorically unique byte array it is wrong)
+        - TODO RFC styled standard with asn1 desc, public and private scheme, lightweight desc, an close to no explanation + key derivation use 
+        - contents id are somehow problematics :
+                - no contents id : they could still be include in content but out of scope : going this way aboutid should also disapear : we miss the point of structuring signed info
+                - no multiple contents id : miss some optim, no added value othe aboutid except not being mandatory (about is not really for root striple too).
+                - multiple content id : the nth content signification should be invalidated if id before are unknown!!
+This make striple simply a most basic application of signing scheme (the goals being to keep it as basic as possible), it really is signed triple (same for bytes after id)
+
+* Striple standard
+
+```
+stripleID | fromID | striplesig | aboutID | signingkey | ( contentID | )\*nbID | content
+```
+nbID not encoded, just reference for other descriptions.
+
+* Serialize binary current implementation
+
+```
+IDalgoSize(2byte) | IDalgo(optional (size >0)) | IDcencodingSize(2byte) | IDcencoding(optional) | stripleIdSize(2byte) | fromIDSize(2byte) | xtensiblesigsize(~4byte) | aboutIDSize(2byte) | xtensiblekeysize(~2byte) | xtensiblenbID (~1byte) |( | contentIDSize(2byte) | )\*nbID  |xtensiblecontentsize (~4byte) | boollocal = false | StripleStandard
+```
+
+* separated serialize
+
+Simply have description envelope (serialize minus striple bytes) plus stripleId as content (bool local is false)
+
