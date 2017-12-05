@@ -44,7 +44,7 @@ It implies that ID do not have a fix size : this is questionable , an a size may
 
 Two implicit rules : 
   - if `striplesig` is null, consider the stripleid as `sig` : it means there was no need to reduce the signature length. (that is the case in most public scheme where the signature is a hash of the content)
-  - if `about` is null, consider `about` being the same as `from` (it allow self signing and is shorter). By extension and to avoid multiple signature on same content the bytes to sign when `from` is the same as `about` must include a zero length `about` : a Striple with `about` and `from` being the same must never be encoded with something else than 0 lenghth id for `about`. 
+  - if `about` is null, consider `about` being the same as striple `id` (it allow self signing and is shorter). By extension and to avoid multiple signature on same content the bytes to sign when `id` is the same as `about` must include a zero length `about` : a Striple with `about` and `id` being the same must never be encoded with something else than 0 lenghth id for `about`. 
 
 TODO file xtension + recursive about = if about is missing about is us.
 
@@ -146,6 +146,7 @@ This make striple simply a most basic application of signing scheme (the goals b
 stripleID | fromID | striplesig | aboutID | signingkey | ( contentID | )\*nbID | content
 ```
 nbID not encoded, just reference for other descriptions.
+Signed content being all after striplesig.
 
 * Serialize binary current implementation
 
