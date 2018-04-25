@@ -158,3 +158,28 @@ IDalgoSize(2byte) | IDalgo(optional (size >0)) | IDcencodingSize(2byte) | IDcenc
 
 Simply have description envelope (serialize minus striple bytes) plus stripleId as content (bool local is false)
 
+* Inherited signingkey
+
+Not yet implemented, an IDalgo will be added to base kind and means use parent public/private key (owned only), the signing key content will be some  random bytes (as in public striple).
+When parent (from) is also of inherited kind, its parent does contain the chain. The chain to the parent striple is expected : header should evolve (striple standard is still fine).
+Note that current api is bad for it (need reference to parent chain to deserialize functional striple (a striple that can check at least)). A key store should be a good idea.
+
+* from id inclusion
+
+from id inclusion is needed.
+Reuse of a fromId, looked at first difficult (signing with from striple makes it fine to not include it). Yet in the case where two striples shares a private key (see other inherited refacto) we can switch fromId in a striple (that is ok in striple philosophie) without changing the striple id (that is not an acceptable striple maleability).
+
+Striples created with same key leading to signed striple with same id and different fromId looks valid. Initially this usecase seems not that bad as we allow any construction, but this leads to having two stripleID with different sense. From a user persepective there is no interest in doing it and some random salt will be added in signing, but as an attack it make sense.
+
+
+New standard becomes (similar inversion in serialize description (fromIDSize before aboutIDSize)) :
+```
+stripleID | striplesig | fromID | aboutID | signingkey | ( contentID | )\*nbID | content
+```
+
+Note also that signing must include fromid (key being shared the fromid is needed in content(otherwhise there would be maleability in fromid)) : that is a breaking change (self signing will be the exception on including fromId). -> fromId should move after signing.  
+
+For self signing fromId length is null (similar to about).
+
+Self signing will not include fromId (derive from signature, and being self).
+
